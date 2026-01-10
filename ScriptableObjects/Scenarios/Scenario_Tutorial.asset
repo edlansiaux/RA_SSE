@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000001, type: 3}
+  m_Name: Scenario_Tutorial
+  m_EditorClassIdentifier: RASSE.Data.ScenarioProfileSO
+  scenarioId: SCN-TUT01
+  scenarioName: "Tutoriel - Introduction au Triage START"
+  description: "Formation guidée aux principes du triage START. 
+    Apprenez à utiliser les lunettes RA, les commandes vocales, 
+    et les protocoles de premiers secours. Environnement contrôlé avec 
+    assistance pas-à-pas."
+  disasterType: 7
+  difficulty: 0
+  totalVictims: 8
+  victimDistribution:
+    redPercentage: 25
+    yellowPercentage: 25
+    greenPercentage: 37
+    blackPercentage: 13
+  spawnZones:
+    - zoneName: Zone Formation
+      center: {x: 0, y: 0, z: 0}
+      radius: 20
+      maxVictims: 8
+      useGlobalDistribution: true
+  maxDurationMinutes: 0
+  deteriorationInterval: 300
+  progressiveSpawnInterval: 60
+  environment:
+    lightLevel: 1.0
+    dynamicLighting: false
+    rainIntensity: 0
+    smokeLevel: 0
+    dustLevel: 0
+    debrisPresent: false
+    waterHazard: false
+    fireHazard: false
+    chemicalHazard: false
+    vibrationLevel: 0
+    noiseLevel: 0.2
+    networkInterference: false
+  sceneName: Scene_Tutorial
+  playerStartPosition: {x: 0, y: 0, z: -10}
+  playerStartRotation: {x: 0, y: 0, z: 0}
+  availableAmbulances: 4
+  availableHospitals: 2
+  initialBatteryPercent: 100
+  offlineModeEnabled: false
+  voiceCommandsEnabled: true
+  objectives:
+    - objectiveId: TUT-01
+      description: Apprendre les commandes vocales de base
+      type: 5
+      targetValue: 5
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 100
+    - objectiveId: TUT-02
+      description: Trier une victime VERTE
+      type: 0
+      targetValue: 1
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 100
+    - objectiveId: TUT-03
+      description: Trier une victime JAUNE
+      type: 0
+      targetValue: 1
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 100
+    - objectiveId: TUT-04
+      description: Trier une victime ROUGE
+      type: 0
+      targetValue: 1
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 100
+    - objectiveId: TUT-05
+      description: Coordonner une évacuation
+      type: 8
+      targetValue: 1
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 150
+    - objectiveId: TUT-06
+      description: Compléter tous les triages
+      type: 0
+      targetValue: 8
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 200
+  perfectScoreThreshold: 100
+  goodScoreThreshold: 90
+  passScoreThreshold: 70
+  enableTutorialHints: true
+  allowPause: true
+  allowRestart: true
+  timeScaleMultiplier: 0.5
+  testedRequirements:
+    - REQ-1
+    - REQ-2
+    - REQ-3
+  relatedSysMLBlocks:
+    - Bloc 2
+    - Bloc 3

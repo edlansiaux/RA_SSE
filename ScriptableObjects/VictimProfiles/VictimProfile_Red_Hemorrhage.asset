@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000003, type: 3}
+  m_Name: VictimProfile_Red_Hemorrhage
+  m_EditorClassIdentifier: RASSE.Data.VictimProfileSO
+  profileId: VIC-RED-HEM01
+  profileName: "Urgence Absolue - Hémorragie Membre"
+  description: "Victime avec hémorragie active au niveau du membre inférieur. 
+    Ne peut pas marcher, consciente mais agitée. Nécessite garrot immédiat."
+  defaultName: "Victime"
+  gender: 0
+  ageMin: 25
+  ageMax: 55
+  startCategory: "RED"
+  categoryColor: {r: 1, g: 0, b: 0, a: 1}
+  triagePriority: 1
+  primaryInjury: 1
+  primarySeverity: 3
+  injuries:
+    - type: 1
+      severity: 3
+      bodyLocation: "Cuisse droite"
+      visualDescription: "Plaie ouverte avec saignement artériel pulsatile"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 150
+    - type: 2
+      severity: 1
+      bodyLocation: "Avant-bras gauche"
+      visualDescription: "Fracture fermée possible, déformation visible"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 0
+  vitalSigns:
+    respiratoryRate: 28
+    respiratoryDistress: false
+    airwayObstructed: false
+    heartRate: 120
+    systolicBP: 85
+    diastolicBP: 55
+    capillaryRefillTime: 3.5
+    glasgowScore: 14
+    pupilsReactive: true
+    conscious: true
+    responds: true
+    temperature: 36.2
+    spO2: 94
+    skinColor: "Pâle"
+  behavior:
+    canWalk: false
+    canSpeak: true
+    isAgitated: true
+    isUnconscious: false
+    isTrapped: false
+    cooperationLevel: 0.6
+    verbalResponse: "J'ai mal ! Ma jambe ! Il y a du sang partout !"
+  evolution:
+    timeToDeterioration: 180
+    respiratoryRateChange: 2
+    heartRateChange: 5
+    bloodLossRate: 150
+    glasgowChange: -1
+    deterioratedCategory: "BLACK"
+  canDeteriorate: true
+  canImproveWithTreatment: true
+  skinTint: {r: 0.9, g: 0.85, b: 0.8, a: 1}
+  hasVisibleBlood: true
+  hasVisibleBurns: false
+  hasVisibleFracture: true
+  dirtLevel: 0.4
+  vocalFrequency: 0.7
+  correctTriagePoints: 150
+  incorrectTriagePenalty: -100
+  missedEvacuationPenalty: -200

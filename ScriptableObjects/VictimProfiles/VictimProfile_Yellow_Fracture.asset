@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000003, type: 3}
+  m_Name: VictimProfile_Yellow_Fracture
+  m_EditorClassIdentifier: RASSE.Data.VictimProfileSO
+  profileId: VIC-YEL-FRA01
+  profileName: "Urgence Relative - Fracture Membre"
+  description: "Victime avec fracture du membre supérieur. Ne peut pas marcher seule 
+    à cause de la douleur, mais état stable. Nécessite immobilisation et antalgiques."
+  defaultName: "Victime"
+  gender: 1
+  ageMin: 30
+  ageMax: 60
+  startCategory: "YELLOW"
+  categoryColor: {r: 1, g: 1, b: 0, a: 1}
+  triagePriority: 3
+  primaryInjury: 2
+  primarySeverity: 2
+  injuries:
+    - type: 2
+      severity: 2
+      bodyLocation: "Bras gauche"
+      visualDescription: "Déformation visible de l'avant-bras, pas de plaie ouverte"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 0
+    - type: 0
+      severity: 0
+      bodyLocation: "Front"
+      visualDescription: "Plaie superficielle avec léger saignement"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 5
+  vitalSigns:
+    respiratoryRate: 18
+    respiratoryDistress: false
+    airwayObstructed: false
+    heartRate: 95
+    systolicBP: 125
+    diastolicBP: 80
+    capillaryRefillTime: 1.5
+    glasgowScore: 15
+    pupilsReactive: true
+    conscious: true
+    responds: true
+    temperature: 37.1
+    spO2: 98
+    skinColor: "Normal"
+  behavior:
+    canWalk: false
+    canSpeak: true
+    isAgitated: false
+    isUnconscious: false
+    isTrapped: false
+    cooperationLevel: 0.9
+    verbalResponse: "Mon bras me fait très mal, je ne peux pas le bouger..."
+  evolution:
+    timeToDeterioration: 600
+    respiratoryRateChange: 0
+    heartRateChange: 1
+    bloodLossRate: 5
+    glasgowChange: 0
+    deterioratedCategory: "YELLOW"
+  canDeteriorate: false
+  canImproveWithTreatment: true
+  skinTint: {r: 0.95, g: 0.9, b: 0.85, a: 1}
+  hasVisibleBlood: true
+  hasVisibleBurns: false
+  hasVisibleFracture: true
+  dirtLevel: 0.3
+  vocalFrequency: 0.4
+  correctTriagePoints: 100
+  incorrectTriagePenalty: -50
+  missedEvacuationPenalty: -75

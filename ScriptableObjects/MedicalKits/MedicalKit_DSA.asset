@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: medicalkit-so-script-guid-placeholder, type: 3}
+  m_Name: MedicalKit_DSA
+  m_EditorClassIdentifier: 
+  
+  # === IDENTIFICATION ===
+  kitId: "KIT_DSA_001"
+  kitName: "Défibrillateur Semi-Automatique (DSA)"
+  kitType: 2  # DSA
+  description: "Défibrillateur semi-automatique avec accessoires complets. Permet la défibrillation en cas d'arrêt cardiaque par fibrillation ventriculaire ou tachycardie ventriculaire sans pouls. Conforme aux recommandations ERC 2021."
+  kitIcon: {fileID: 0}
+  
+  # === CARACTÉRISTIQUES PHYSIQUES ===
+  totalWeightKg: 3.2
+  dimensionsCm: {x: 28, y: 22, z: 10}
+  kitColor: {r: 0, g: 0.8, b: 0, a: 1}  # Vert vif
+  isWaterResistant: 1
+  isShockResistant: 1
+  
+  # === CONTENU DU KIT ===
+  contents:
+    # Défibrillateur
+    - itemName: "Défibrillateur semi-automatique"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 2200
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Électrodes
+    - itemName: "Électrodes adultes pré-connectées"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 120
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    - itemName: "Électrodes pédiatriques"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 100
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    
+    # Accessoires
+    - itemName: "Rasoir jetable"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 20
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Compresses sèches"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 5
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Ciseaux coupe-vêtements"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 80
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Gants à usage unique (paires)"
+      quantity: 4
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 10
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    
+    # Alimentation
+    - itemName: "Batterie lithium longue durée"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 400
+      isConsumable: 0
+      hasExpiryDate: 1
+      shelfLifeMonths: 48
+    
+    # Documentation
+    - itemName: "Guide d'utilisation rapide"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 30
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+  
+  # === UTILISATION ===
+  requiredCompetency: 0  # Secouriste (PSC1 suffit pour DSA)
+  maxVictimsTreatable: 5
+  suitableForPediatric: 1
+  suitableForAdult: 1
+  requiresSpecialStorage: 1
+  storageTemperatureRange: {x: 0, y: 40}
+  
+  # === PROTOCOLES ASSOCIÉS ===
+  associatedProtocols:
+    - protocolName: "Défibrillation - Arrêt cardiaque"
+      description: "Utilisation du DSA en cas d'arrêt cardiaque"
+      steps:
+        - "Confirmer l'arrêt cardiaque (inconscience + absence de respiration)"
+        - "Demander un DSA et appeler le 15"
+        - "Commencer la RCP immédiatement"
+        - "Dès disponibilité: allumer le DSA"
+        - "Dénuder le thorax, sécher si nécessaire, raser si pilosité importante"
+        - "Coller les électrodes selon schéma (sous-claviculaire D + apex G)"
+        - "Suivre les instructions vocales du DSA"
+        - "S'écarter lors de l'analyse et du choc"
+        - "Reprendre la RCP immédiatement après le choc"
+        - "Continuer jusqu'à relève par équipe médicale ou reprise de vie"
+      applicableTriageCategories:
+        - "ROUGE"
+    - protocolName: "DSA - Cas particuliers"
+      description: "Situations particulières d'utilisation du DSA"
+      steps:
+        - "Victime mouillée: sécher le thorax avant pose des électrodes"
+        - "Pacemaker visible: placer électrode à 8cm du boîtier"
+        - "Timbre médicamenteux: retirer et nettoyer la zone"
+        - "Enfant 1-8 ans: utiliser électrodes pédiatriques si disponibles"
+        - "Enfant < 1 an: DSA contre-indiqué, RCP manuelle uniquement"
+        - "Femme enceinte: pas de contre-indication, procéder normalement"
+      applicableTriageCategories:
+        - "ROUGE"
+  
+  # === TRIAGE ===
+  applicableToRed: 1
+  applicableToYellow: 0
+  applicableToGreen: 0
+  applicableToBlack: 0
+  
+  # === MAINTENANCE ===
+  checkFrequencyDays: 7
+  replacementCostEuros: 1200
+  supplierReference: "REF-DSA-2024-FR"
+  
+  # === PARAMÈTRES SIMULATION ===
+  avgUsageTimeSeconds: 300
+  treatmentEfficiency: 0.70
+  usableInDegradedConditions: 1
+  kitPrefab: {fileID: 0}

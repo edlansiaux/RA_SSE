@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: medicalkit-so-script-guid-placeholder, type: 3}
+  m_Name: MedicalKit_PSE1
+  m_EditorClassIdentifier: 
+  
+  # === IDENTIFICATION ===
+  kitId: "KIT_PSE1_001"
+  kitName: "Kit PSE1 - Premiers Secours en Équipe Niveau 1"
+  kitType: 0  # PSE1
+  description: "Kit standard pour équipier secouriste PSE1. Contient le matériel de base pour la prise en charge des urgences vitales et la réalisation des gestes de premiers secours en équipe. Conforme aux recommandations de la DGSCGC."
+  kitIcon: {fileID: 0}
+  
+  # === CARACTÉRISTIQUES PHYSIQUES ===
+  totalWeightKg: 8.5
+  dimensionsCm: {x: 45, y: 35, z: 25}
+  kitColor: {r: 1, g: 0, b: 0, a: 1}  # Rouge
+  isWaterResistant: 1
+  isShockResistant: 1
+  
+  # === CONTENU DU KIT ===
+  contents:
+    # Protection et hygiène
+    - itemName: "Gants à usage unique (paires)"
+      quantity: 20
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 10
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Masque de protection FFP2"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 15
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    - itemName: "Lunettes de protection"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 50
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Solution hydro-alcoolique 100ml"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 120
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    
+    # Hémorragies
+    - itemName: "Compresses stériles 10x10cm"
+      quantity: 30
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 5
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 60
+    - itemName: "Bandes de crêpe 10cm"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 30
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Pansement compressif d'urgence"
+      quantity: 5
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 80
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 60
+    - itemName: "Garrot tourniquet"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 85
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Voies aériennes
+    - itemName: "Canule de Guedel (jeu complet)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 100
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Insufflateur manuel (BAVU)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 450
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Masque pour BAVU adulte"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 80
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Masque pour BAVU pédiatrique"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 50
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Immobilisation
+    - itemName: "Collier cervical réglable"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 150
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Couverture de survie"
+      quantity: 5
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 60
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Divers
+    - itemName: "Ciseaux de secours"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 80
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Lampe stylo"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 30
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Fiches bilan papier"
+      quantity: 20
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 5
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+  
+  # === UTILISATION ===
+  requiredCompetency: 1  # EquipierPSE1
+  maxVictimsTreatable: 15
+  suitableForPediatric: 1
+  suitableForAdult: 1
+  requiresSpecialStorage: 0
+  storageTemperatureRange: {x: 5, y: 30}
+  
+  # === PROTOCOLES ASSOCIÉS ===
+  associatedProtocols:
+    - protocolName: "Arrêt cardiaque - RCP"
+      description: "Réanimation cardio-pulmonaire de base avec BAVU"
+      steps:
+        - "Sécuriser la zone"
+        - "Vérifier la conscience"
+        - "Appeler les secours"
+        - "Libérer les voies aériennes"
+        - "Vérifier la respiration"
+        - "Commencer les compressions thoraciques"
+        - "Alterner 30 compressions / 2 insufflations"
+      applicableTriageCategories:
+        - "ROUGE"
+    - protocolName: "Hémorragie externe"
+      description: "Contrôle d'une hémorragie externe visible"
+      steps:
+        - "Mettre des gants"
+        - "Appliquer une compression directe"
+        - "Si inefficace: pansement compressif"
+        - "Si inefficace sur membre: garrot"
+        - "Noter l'heure de pose du garrot"
+        - "Surveiller et rassurer"
+      applicableTriageCategories:
+        - "ROUGE"
+        - "JAUNE"
+    - protocolName: "Obstruction des voies aériennes"
+      description: "Désobstruction des voies aériennes"
+      steps:
+        - "Évaluer la gravité (partielle/totale)"
+        - "Si partielle: encourager à tousser"
+        - "Si totale: 5 claques dorsales"
+        - "Si inefficace: 5 compressions abdominales"
+        - "Alterner jusqu'à désobstruction ou inconscience"
+      applicableTriageCategories:
+        - "ROUGE"
+  
+  # === TRIAGE ===
+  applicableToRed: 1
+  applicableToYellow: 1
+  applicableToGreen: 1
+  applicableToBlack: 0
+  
+  # === MAINTENANCE ===
+  checkFrequencyDays: 30
+  replacementCostEuros: 450
+  supplierReference: "REF-PSE1-2024-FR"
+  
+  # === PARAMÈTRES SIMULATION ===
+  avgUsageTimeSeconds: 90
+  treatmentEfficiency: 0.80
+  usableInDegradedConditions: 1
+  kitPrefab: {fileID: 0}

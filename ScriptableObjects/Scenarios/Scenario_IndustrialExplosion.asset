@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000001, type: 3}
+  m_Name: Scenario_IndustrialExplosion
+  m_EditorClassIdentifier: RASSE.Data.ScenarioProfileSO
+  scenarioId: SCN-INDUS01
+  scenarioName: Explosion Usine Chimique - Zone Industrielle
+  description: "Explosion majeure dans une usine de produits chimiques. Risque NRBC, 
+    brûlures et traumatismes multiples. Zone de danger étendue, nécessité de décontamination.
+    Intervention conjointe avec équipes NRBC."
+  disasterType: 1
+  difficulty: 3
+  totalVictims: 50
+  victimDistribution:
+    redPercentage: 25
+    yellowPercentage: 30
+    greenPercentage: 35
+    blackPercentage: 10
+  spawnZones:
+    - zoneName: Zone Impact - Épicentre
+      center: {x: 0, y: 0, z: 0}
+      radius: 20
+      maxVictims: 15
+      useGlobalDistribution: false
+      localDistribution:
+        redPercentage: 50
+        yellowPercentage: 20
+        greenPercentage: 10
+        blackPercentage: 20
+    - zoneName: Zone Blast - Rayon 50m
+      center: {x: 40, y: 0, z: 0}
+      radius: 25
+      maxVictims: 20
+      useGlobalDistribution: false
+      localDistribution:
+        redPercentage: 20
+        yellowPercentage: 40
+        greenPercentage: 35
+        blackPercentage: 5
+    - zoneName: Parking Personnel
+      center: {x: -30, y: 0, z: 40}
+      radius: 15
+      maxVictims: 10
+      useGlobalDistribution: false
+      localDistribution:
+        redPercentage: 10
+        yellowPercentage: 30
+        greenPercentage: 60
+        blackPercentage: 0
+    - zoneName: Entrée Usine
+      center: {x: 0, y: 0, z: 60}
+      radius: 10
+      maxVictims: 5
+      useGlobalDistribution: false
+      localDistribution:
+        redPercentage: 0
+        yellowPercentage: 20
+        greenPercentage: 80
+        blackPercentage: 0
+  maxDurationMinutes: 60
+  deteriorationInterval: 60
+  progressiveSpawnInterval: 30
+  environment:
+    lightLevel: 0.5
+    dynamicLighting: true
+    rainIntensity: 0
+    smokeLevel: 0.7
+    dustLevel: 0.5
+    debrisPresent: true
+    waterHazard: false
+    fireHazard: true
+    chemicalHazard: true
+    vibrationLevel: 0.3
+    noiseLevel: 0.8
+    networkInterference: true
+  sceneName: Scene_IndustrialZone
+  playerStartPosition: {x: 80, y: 0, z: 60}
+  playerStartRotation: {x: 0, y: 225, z: 0}
+  availableAmbulances: 12
+  availableHospitals: 5
+  initialBatteryPercent: 100
+  offlineModeEnabled: true
+  voiceCommandsEnabled: true
+  objectives:
+    - objectiveId: OBJ-01
+      description: Trier toutes les victimes
+      type: 0
+      targetValue: 50
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 600
+    - objectiveId: OBJ-02
+      description: Évacuer les ROUGE en moins de 20 minutes
+      type: 3
+      targetValue: 100
+      timeLimit: 1200
+      isRequired: true
+      pointsValue: 500
+    - objectiveId: OBJ-03
+      description: "Maintenir batterie au-dessus de 20%"
+      type: 4
+      targetValue: 20
+      timeLimit: 0
+      isRequired: false
+      pointsValue: 200
+    - objectiveId: OBJ-04
+      description: Appliquer protocoles brûlures
+      type: 7
+      targetValue: 100
+      timeLimit: 0
+      isRequired: true
+      pointsValue: 300
+    - objectiveId: OBJ-05
+      description: Coordonner avec centres grands brûlés
+      type: 8
+      targetValue: 5
+      timeLimit: 0
+      isRequired: false
+      pointsValue: 250
+  perfectScoreThreshold: 90
+  goodScoreThreshold: 75
+  passScoreThreshold: 55
+  enableTutorialHints: false
+  allowPause: true
+  allowRestart: true
+  timeScaleMultiplier: 1
+  testedRequirements:
+    - REQ-1
+    - REQ-2
+    - REQ-3
+    - REQ-4
+    - REQ-5
+    - REQ-7
+  relatedSysMLBlocks:
+    - Bloc 1
+    - Bloc 2
+    - Bloc 3
+    - Bloc 4
+    - Bloc 14
+    - Bloc 19

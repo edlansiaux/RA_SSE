@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000003, type: 3}
+  m_Name: VictimProfile_Black_Deceased
+  m_EditorClassIdentifier: RASSE.Data.VictimProfileSO
+  profileId: VIC-BLK-DEC01
+  profileName: "Décédé - Arrêt Cardio-Respiratoire"
+  description: "Victime en arrêt cardio-respiratoire sans reprise après libération 
+    des voies aériennes. Décès constaté selon protocole START."
+  defaultName: "Victime"
+  gender: 0
+  ageMin: 35
+  ageMax: 65
+  startCategory: "BLACK"
+  categoryColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  triagePriority: 10
+  primaryInjury: 14
+  primarySeverity: 4
+  injuries:
+    - type: 4
+      severity: 4
+      bodyLocation: "Tête"
+      visualDescription: "Traumatisme crânien majeur, déformation visible"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 0
+    - type: 5
+      severity: 4
+      bodyLocation: "Thorax"
+      visualDescription: "Enfoncement thoracique"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 0
+  vitalSigns:
+    respiratoryRate: 0
+    respiratoryDistress: false
+    airwayObstructed: false
+    heartRate: 0
+    systolicBP: 0
+    diastolicBP: 0
+    capillaryRefillTime: 10
+    glasgowScore: 3
+    pupilsReactive: false
+    conscious: false
+    responds: false
+    temperature: 34.0
+    spO2: 0
+    skinColor: "Cyanosé"
+  behavior:
+    canWalk: false
+    canSpeak: false
+    isAgitated: false
+    isUnconscious: true
+    isTrapped: false
+    cooperationLevel: 0
+    verbalResponse: ""
+  evolution:
+    timeToDeterioration: 0
+    respiratoryRateChange: 0
+    heartRateChange: 0
+    bloodLossRate: 0
+    glasgowChange: 0
+    deterioratedCategory: "BLACK"
+  canDeteriorate: false
+  canImproveWithTreatment: false
+  skinTint: {r: 0.7, g: 0.75, b: 0.85, a: 1}
+  hasVisibleBlood: true
+  hasVisibleBurns: false
+  hasVisibleFracture: false
+  dirtLevel: 0.6
+  vocalFrequency: 0
+  correctTriagePoints: 100
+  incorrectTriagePenalty: -75
+  missedEvacuationPenalty: 0

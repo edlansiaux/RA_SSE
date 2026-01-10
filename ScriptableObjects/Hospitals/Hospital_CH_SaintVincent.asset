@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000002, type: 3}
+  m_Name: Hospital_CH_SaintVincent
+  m_EditorClassIdentifier: RASSE.Data.HospitalProfileSO
+  hospitalId: HOP-CHR002
+  hospitalName: CH Saint-Vincent
+  finess: "590000002"
+  hospitalType: 2
+  address: "Boulevard de Belfort"
+  city: "Lille"
+  postalCode: "59000"
+  worldPosition: {x: 50, y: 0, z: 150}
+  gpsCoordinates: {x: 50.6292, y: 3.0573}
+  distanceFromSceneKm: 5.2
+  totalBeds: 450
+  emergencyBeds: 35
+  availableBeds: 12
+  surgeCapacity: 40
+  planBlancActivated: false
+  specialties:
+    - specialtyName: Urgences
+      type: 0
+      availableBeds: 8
+      totalBeds: 20
+      h24Available: true
+      currentWaitTimeMinutes: 30
+    - specialtyName: Chirurgie
+      type: 8
+      availableBeds: 4
+      totalBeds: 15
+      h24Available: true
+      currentWaitTimeMinutes: 45
+    - specialtyName: Orthopédie
+      type: 5
+      availableBeds: 3
+      totalBeds: 12
+      h24Available: false
+      currentWaitTimeMinutes: 60
+    - specialtyName: Cardiologie
+      type: 4
+      availableBeds: 2
+      totalBeds: 10
+      h24Available: true
+      currentWaitTimeMinutes: 25
+  resources:
+    operatingRooms: 6
+    availableOperatingRooms: 2
+    scanners: 2
+    irmMachines: 1
+    xrayRooms: 4
+    icuBeds: 12
+    availableIcuBeds: 2
+    ventilators: 15
+    availableVentilators: 4
+    bloodBankAvailable: true
+  mainPhoneNumber: "03 20 87 48 48"
+  emergencyPhoneNumber: "03 20 87 49 00"
+  samuPhoneNumber: "15"
+  contacts:
+    - role: Médecin Urgentiste de Garde
+      name: Dr. Pierre Moreau
+      phoneNumber: "03 20 87 49 01"
+      email: "urgences@ch-saintvincent.fr"
+      isAvailable: true
+  averageWaitTimeMinutes: 30
+  estimatedTravelTimeMinutes: 10
+  traumaPriorityScore: 70
+  acceptsHelicopter: false
+  h24Emergency: true
+  fhirEnabled: true
+  hl7Enabled: true
+  fhirEndpoint: "https://fhir.ch-saintvincent.fr/r4"
+  hl7EndpointIP: "192.168.1.101"
+  hl7Port: 2575
+  hospitalColor: {r: 0.3, g: 0.6, b: 0.4, a: 1}
+  lowCapacityColor: {r: 1, g: 0.7, b: 0, a: 1}
+  noCapacityColor: {r: 0.8, g: 0.2, b: 0.2, a: 1}

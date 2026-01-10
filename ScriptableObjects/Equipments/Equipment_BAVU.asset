@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: equipmentso-script-guid-placeholder, type: 3}
+  m_Name: Equipment_BAVU
+  m_EditorClassIdentifier: 
+  equipmentId: EQ_BAVU_001
+  equipmentName: BAVU - Ballon Auto-remplisseur
+  description: "Ballon auto-remplisseur à valve unidirectionnelle pour ventilation artificielle. Permet d'insuffler de l'air enrichi en oxygène aux patients en détresse respiratoire ou en arrêt cardiaque."
+  category: 1
+  weight: 0.45
+  isReusable: true
+  usageInstructions:
+    - "Sélectionner le masque adapté à la taille du patient"
+    - "Positionner le masque sur le visage (nez et bouche)"
+    - "Maintenir l'étanchéité avec la technique du C-E"
+    - "Comprimer le ballon pendant 1 seconde"
+    - "Observer le soulèvement thoracique"
+    - "Ventiler à 10-12 insufflations/minute chez l'adulte"
+    - "Connecter l'oxygène si disponible (débit 15L/min)"
+  contraindications:
+    - "Obstruction des voies aériennes non levée"
+    - "Traumatisme facial majeur empêchant l'étanchéité"
+  applicableInjuries:
+    - 1
+    - 5
+  icon: {fileID: 0}
+  model3D: {fileID: 0}

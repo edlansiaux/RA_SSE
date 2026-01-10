@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: medicalkit-so-script-guid-placeholder, type: 3}
+  m_Name: MedicalKit_PSE2
+  m_EditorClassIdentifier: 
+  
+  # === IDENTIFICATION ===
+  kitId: "KIT_PSE2_001"
+  kitName: "Kit PSE2 - Premiers Secours en Équipe Niveau 2"
+  kitType: 1  # PSE2
+  description: "Kit avancé pour équipier secouriste PSE2. Complète le kit PSE1 avec du matériel de médicalisation : oxygénothérapie, aspiration, monitoring. Permet une prise en charge plus complète en attendant l'équipe médicale."
+  kitIcon: {fileID: 0}
+  
+  # === CARACTÉRISTIQUES PHYSIQUES ===
+  totalWeightKg: 15.5
+  dimensionsCm: {x: 55, y: 40, z: 30}
+  kitColor: {r: 1, g: 0.5, b: 0, a: 1}  # Orange
+  isWaterResistant: 1
+  isShockResistant: 1
+  
+  # === CONTENU DU KIT ===
+  contents:
+    # Oxygénothérapie
+    - itemName: "Bouteille O2 portable 2L"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 3500
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Détendeur-débitmètre O2"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 450
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Masque haute concentration adulte"
+      quantity: 5
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 40
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Masque haute concentration pédiatrique"
+      quantity: 3
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 30
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Lunettes à oxygène"
+      quantity: 5
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 20
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Aspiration
+    - itemName: "Aspirateur de mucosités manuel"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 800
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Sondes d'aspiration (jeu)"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 15
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    
+    # Monitoring
+    - itemName: "Oxymètre de pouls (SpO2)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 100
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Tensiomètre manuel"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 350
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Stéthoscope"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 150
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Thermomètre frontal"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 80
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Glucomètre + bandelettes"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 150
+      isConsumable: 0
+      hasExpiryDate: 1
+      shelfLifeMonths: 12
+    
+    # Immobilisation avancée
+    - itemName: "Attelles modulables (jeu membre sup/inf)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 1200
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Matelas immobilisateur à dépression"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 4500
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Plan dur avec sangles"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 6000
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Cale-tête"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 800
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Brûlures et plaies
+    - itemName: "Gel eau brûlures sachet"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 50
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    - itemName: "Pansement hydrocolloïde grand"
+      quantity: 5
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 30
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    
+    # Perfusion (préparation)
+    - itemName: "Cathéters IV (jeu tailles)"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 15
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Compresses alcoolisées"
+      quantity: 50
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 3
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+  
+  # === UTILISATION ===
+  requiredCompetency: 2  # EquipierPSE2
+  maxVictimsTreatable: 20
+  suitableForPediatric: 1
+  suitableForAdult: 1
+  requiresSpecialStorage: 1
+  storageTemperatureRange: {x: 10, y: 25}
+  
+  # === PROTOCOLES ASSOCIÉS ===
+  associatedProtocols:
+    - protocolName: "Détresse respiratoire"
+      description: "Prise en charge d'une détresse respiratoire avec oxygénothérapie"
+      steps:
+        - "Position demi-assise"
+        - "Desserrer les vêtements"
+        - "Mesurer SpO2"
+        - "Si SpO2 < 94%: oxygène au masque HC 15L/min"
+        - "Surveiller la conscience et la respiration"
+        - "Adapter le débit selon SpO2"
+      applicableTriageCategories:
+        - "ROUGE"
+        - "JAUNE"
+    - protocolName: "Traumatisme rachidien suspecté"
+      description: "Immobilisation d'un traumatisé avec suspicion de lésion rachidienne"
+      steps:
+        - "Maintien tête en position neutre"
+        - "Pose du collier cervical"
+        - "Log-roll à 3 équipiers minimum"
+        - "Installation sur plan dur"
+        - "Pose des cale-têtes"
+        - "Sanglage complet"
+        - "Surveillance neurologique"
+      applicableTriageCategories:
+        - "ROUGE"
+        - "JAUNE"
+    - protocolName: "Monitoring victime"
+      description: "Surveillance des constantes vitales"
+      steps:
+        - "Mesure SpO2"
+        - "Mesure tension artérielle"
+        - "Mesure fréquence cardiaque"
+        - "Mesure température"
+        - "Mesure glycémie si indiqué"
+        - "Reporter sur fiche bilan"
+        - "Répéter toutes les 5 minutes si instable"
+      applicableTriageCategories:
+        - "ROUGE"
+        - "JAUNE"
+        - "VERT"
+  
+  # === TRIAGE ===
+  applicableToRed: 1
+  applicableToYellow: 1
+  applicableToGreen: 1
+  applicableToBlack: 0
+  
+  # === MAINTENANCE ===
+  checkFrequencyDays: 15
+  replacementCostEuros: 1800
+  supplierReference: "REF-PSE2-2024-FR"
+  
+  # === PARAMÈTRES SIMULATION ===
+  avgUsageTimeSeconds: 180
+  treatmentEfficiency: 0.90
+  usableInDegradedConditions: 1
+  kitPrefab: {fileID: 0}

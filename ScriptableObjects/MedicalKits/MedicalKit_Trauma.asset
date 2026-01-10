@@ -1,0 +1,261 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: medicalkit-so-script-guid-placeholder, type: 3}
+  m_Name: MedicalKit_Trauma
+  m_EditorClassIdentifier: 
+  
+  # === IDENTIFICATION ===
+  kitId: "KIT_TRAUMA_001"
+  kitName: "Sac Trauma SMUR - Kit Médicalisation Avancée"
+  kitType: 10  # KitTrauma
+  description: "Sac médical complet pour équipe SMUR. Contient tout le matériel nécessaire à la médicalisation préhospitalière avancée: intubation, perfusion, médicaments d'urgence, monitoring multiparamétrique. Réservé au personnel médical qualifié."
+  kitIcon: {fileID: 0}
+  
+  # === CARACTÉRISTIQUES PHYSIQUES ===
+  totalWeightKg: 22.5
+  dimensionsCm: {x: 60, y: 45, z: 35}
+  kitColor: {r: 0, g: 0, b: 0.8, a: 1}  # Bleu SAMU
+  isWaterResistant: 1
+  isShockResistant: 1
+  
+  # === CONTENU DU KIT ===
+  contents:
+    # Voies aériennes avancées
+    - itemName: "Laryngoscope avec lames (jeu complet)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 450
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Sondes d'intubation (jeu 5.0-8.0)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 200
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 60
+    - itemName: "Mandrin souple"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 50
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Masque laryngé (jeu tailles)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 150
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 48
+    - itemName: "Kit cricothyroïdotomie"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 200
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Capnographe portable"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 300
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Ventilation
+    - itemName: "Respirateur de transport"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 3500
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Bouteille O2 5L avec détendeur"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 7000
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Accès vasculaire
+    - itemName: "Cathéters IV (jeu 14G-24G)"
+      quantity: 20
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 10
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Kit voie centrale"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 150
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Kit intra-osseux EZ-IO"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 400
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    - itemName: "NaCl 0.9% 500ml"
+      quantity: 4
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 520
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    - itemName: "Tubulures perfusion"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 30
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Pousse-seringue électrique"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 800
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Monitoring
+    - itemName: "Scope multiparamétrique portable"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 2500
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Électrodes ECG"
+      quantity: 20
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 5
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 24
+    - itemName: "Brassard TA (jeu tailles)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 300
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Médicaments d'urgence (représentation)
+    - itemName: "Pochette médicaments urgence vitale"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 500
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 6
+    - itemName: "Pochette sédation/analgésie"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 300
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 6
+    - itemName: "Pochette antidotes"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 400
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 12
+    
+    # Immobilisation trauma
+    - itemName: "Attelle de traction fémorale"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 1500
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Ceinture pelvienne"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 600
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+  
+  # === UTILISATION ===
+  requiredCompetency: 5  # MedecinUrgentiste
+  maxVictimsTreatable: 5
+  suitableForPediatric: 1
+  suitableForAdult: 1
+  requiresSpecialStorage: 1
+  storageTemperatureRange: {x: 15, y: 25}
+  
+  # === PROTOCOLES ASSOCIÉS ===
+  associatedProtocols:
+    - protocolName: "ABCDE - Trauma grave"
+      description: "Évaluation et prise en charge du traumatisé grave"
+      steps:
+        - "A - Airway: Contrôle des voies aériennes + stabilisation rachis cervical"
+        - "B - Breathing: Oxygène, drainage thoracique si nécessaire"
+        - "C - Circulation: Accès IV/IO, remplissage, catécholamines"
+        - "D - Disability: Score Glasgow, pupilles, glycémie"
+        - "E - Exposure: Déshabillage complet, protection thermique"
+        - "Réévaluation continue"
+        - "Orientation vers trauma center"
+      applicableTriageCategories:
+        - "ROUGE"
+    - protocolName: "Intubation séquence rapide"
+      description: "Protocole d'intubation en urgence"
+      steps:
+        - "Préparation matériel (vérification)"
+        - "Préoxygénation 3 minutes"
+        - "Induction: hypnotique + curare"
+        - "Manœuvre de Sellick"
+        - "Laryngoscopie directe"
+        - "Intubation + vérification placement"
+        - "Fixation + ventilation contrôlée"
+        - "Sédation d'entretien"
+      applicableTriageCategories:
+        - "ROUGE"
+    - protocolName: "Choc hémorragique"
+      description: "Prise en charge du choc hémorragique traumatique"
+      steps:
+        - "Contrôle hémorragie (garrot, packing)"
+        - "2 voies veineuses gros calibre"
+        - "Remplissage NaCl objectif PAS > 80-90"
+        - "Acide tranexamique 1g IV si < 3h"
+        - "Noradrénaline si remplissage insuffisant"
+        - "Hypothermie permissive"
+        - "Transport immédiat trauma center"
+      applicableTriageCategories:
+        - "ROUGE"
+  
+  # === TRIAGE ===
+  applicableToRed: 1
+  applicableToYellow: 1
+  applicableToGreen: 0
+  applicableToBlack: 0
+  
+  # === MAINTENANCE ===
+  checkFrequencyDays: 7
+  replacementCostEuros: 15000
+  supplierReference: "REF-SMUR-2024-TRAUMA"
+  
+  # === PARAMÈTRES SIMULATION ===
+  avgUsageTimeSeconds: 600
+  treatmentEfficiency: 0.95
+  usableInDegradedConditions: 0
+  kitPrefab: {fileID: 0}

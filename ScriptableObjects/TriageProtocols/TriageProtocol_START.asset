@@ -1,0 +1,252 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000004, type: 3}
+  m_Name: TriageProtocol_START
+  m_EditorClassIdentifier: RASSE.Data.TriageProtocolSO
+  protocolId: START
+  protocolName: "Simple Triage And Rapid Treatment"
+  version: "2.0"
+  lastUpdate: "2024"
+  description: "Protocole de triage rapide développé pour les situations d'afflux massif 
+    de victimes. Permet une catégorisation en moins de 60 secondes par victime basée 
+    sur la marche, la respiration, la perfusion et l'état neurologique."
+  sourceReference: "SFMU - Société Française de Médecine d'Urgence, Recommandations 2019"
+  evaluationSteps:
+    - stepNumber: 1
+      stepName: "Test de la Marche"
+      instruction: "La victime peut-elle marcher ?"
+      evaluationCriteria: "Capable de se lever et marcher sans aide"
+      yesOutcome: "VERT - Diriger vers PRV"
+      noOutcome: "Continuer évaluation"
+      recommendedDuration: 5
+    - stepNumber: 2
+      stepName: "Évaluation Respiratoire"
+      instruction: "La victime respire-t-elle ?"
+      evaluationCriteria: "Observer mouvements thoraciques, sentir souffle"
+      yesOutcome: "Continuer évaluation"
+      noOutcome: "Libérer voies aériennes, réévaluer"
+      recommendedDuration: 10
+    - stepNumber: 3
+      stepName: "Fréquence Respiratoire"
+      instruction: "Compter la fréquence respiratoire sur 15 secondes x 4"
+      evaluationCriteria: "FR > 30/min ou FR < 8/min"
+      yesOutcome: "ROUGE - Urgence absolue"
+      noOutcome: "Continuer évaluation"
+      recommendedDuration: 15
+    - stepNumber: 4
+      stepName: "Test de Perfusion"
+      instruction: "Évaluer le temps de recoloration capillaire (TRC)"
+      evaluationCriteria: "Appuyer 5 sec sur ongle, temps de recoloration"
+      yesOutcome: "ROUGE si TRC > 2 secondes"
+      noOutcome: "Continuer si TRC ≤ 2 secondes"
+      recommendedDuration: 10
+    - stepNumber: 5
+      stepName: "Test Neurologique"
+      instruction: "La victime répond-elle aux ordres simples ?"
+      evaluationCriteria: "Demander de serrer la main, ouvrir les yeux"
+      yesOutcome: "JAUNE - Urgence relative"
+      noOutcome: "ROUGE - Urgence absolue"
+      recommendedDuration: 10
+  respiratoryRateThreshold: 30
+  capillaryRefillThreshold: 2.0
+  glasgowThreshold: 14
+  systolicBPThreshold: 90
+  maxTimePerVictim: 60
+  reevaluationIntervalMinutes: 15
+  redProtocol:
+    categoryCode: "RED"
+    categoryName: "Urgence Absolue"
+    categoryColor: {r: 1, g: 0, b: 0, a: 1}
+    definition: "Victime dont le pronostic vital est engagé mais qui peut être sauvée 
+      avec une prise en charge immédiate. Priorité maximale d'évacuation."
+    criteria:
+      - "FR > 30/min ou FR < 8/min"
+      - "TRC > 2 secondes"
+      - "Ne répond pas aux ordres simples"
+      - "Respire après libération des voies aériennes"
+      - "Hémorragie non contrôlée"
+    immediateActions:
+      - actionId: "RED-01"
+        actionName: "Libération Voies Aériennes"
+        description: "Bascule tête en arrière, subluxation mandibule si nécessaire"
+        requiredEquipment: ["Canule de Guedel"]
+        estimatedDuration: 30
+        priorityOrder: 1
+        isCritical: true
+      - actionId: "RED-02"
+        actionName: "Contrôle Hémorragies"
+        description: "Compression directe, garrot si membre, pansement compressif"
+        requiredEquipment: ["Garrot", "Pansement compressif", "Compresses"]
+        estimatedDuration: 60
+        priorityOrder: 2
+        isCritical: true
+      - actionId: "RED-03"
+        actionName: "Position Latérale de Sécurité"
+        description: "Si inconscient mais respire, placer en PLS"
+        requiredEquipment: []
+        estimatedDuration: 30
+        priorityOrder: 3
+        isCritical: false
+      - actionId: "RED-04"
+        actionName: "Oxygénothérapie"
+        description: "O2 15L/min au masque haute concentration"
+        requiredEquipment: ["Bouteille O2", "Masque HC"]
+        estimatedDuration: 60
+        priorityOrder: 4
+        isCritical: true
+    evacuationPriority: "IMMÉDIATE"
+    maxEvacuationTimeMinutes: 10
+    transportType: "SMUR / Hélicoptère"
+    destinationType: "Trauma Center / CHU"
+    contraindications:
+      - description: "Ne pas mobiliser la colonne si suspicion trauma rachis"
+        reason: "Risque de lésion médullaire"
+        category: "RED"
+      - description: "Ne pas retirer un objet empalé"
+        reason: "Risque d'hémorragie massive"
+        category: "RED"
+    alertMessages:
+      - "URGENCE ABSOLUE - Évacuation immédiate requise"
+      - "Pronostic vital engagé"
+    radioCode: "DELTA"
+  yellowProtocol:
+    categoryCode: "YELLOW"
+    categoryName: "Urgence Relative"
+    categoryColor: {r: 1, g: 1, b: 0, a: 1}
+    definition: "Victime dont l'état est sérieux mais stable, nécessitant une prise 
+      en charge médicale différée. Surveillance nécessaire."
+    criteria:
+      - "Ne peut pas marcher seule"
+      - "FR entre 8 et 30/min"
+      - "TRC ≤ 2 secondes"
+      - "Répond aux ordres simples"
+      - "État stable"
+    immediateActions:
+      - actionId: "YEL-01"
+        actionName: "Immobilisation"
+        description: "Immobiliser les fractures, collier cervical si nécessaire"
+        requiredEquipment: ["Attelles", "Collier cervical"]
+        estimatedDuration: 120
+        priorityOrder: 1
+        isCritical: false
+      - actionId: "YEL-02"
+        actionName: "Pansements"
+        description: "Couvrir les plaies avec pansements propres"
+        requiredEquipment: ["Compresses stériles", "Bandes"]
+        estimatedDuration: 60
+        priorityOrder: 2
+        isCritical: false
+      - actionId: "YEL-03"
+        actionName: "Position Confortable"
+        description: "Installer la victime confortablement, couvrir"
+        requiredEquipment: ["Couverture de survie"]
+        estimatedDuration: 30
+        priorityOrder: 3
+        isCritical: false
+    evacuationPriority: "DIFFÉRÉE"
+    maxEvacuationTimeMinutes: 30
+    transportType: "VSAV / Ambulance"
+    destinationType: "Centre Hospitalier"
+    contraindications:
+      - description: "Ne pas faire marcher si suspicion de fracture"
+        reason: "Risque d'aggravation"
+        category: "YELLOW"
+    alertMessages:
+      - "Urgence relative - Surveillance requise"
+      - "Évacuation après les urgences absolues"
+    radioCode: "BRAVO"
+  greenProtocol:
+    categoryCode: "GREEN"
+    categoryName: "Urgence Dépassée"
+    categoryColor: {r: 0, g: 1, b: 0, a: 1}
+    definition: "Victime valide pouvant marcher, blessures légères ne mettant pas 
+      en jeu le pronostic vital. Peut attendre et aider."
+    criteria:
+      - "Peut marcher sans aide"
+      - "Blessures mineures"
+      - "État général bon"
+    immediateActions:
+      - actionId: "GRE-01"
+        actionName: "Rassurer"
+        description: "Expliquer la situation, orienter vers le PRV"
+        requiredEquipment: []
+        estimatedDuration: 30
+        priorityOrder: 1
+        isCritical: false
+      - actionId: "GRE-02"
+        actionName: "Soins Mineurs"
+        description: "Nettoyer et panser les plaies superficielles"
+        requiredEquipment: ["Désinfectant", "Pansements"]
+        estimatedDuration: 60
+        priorityOrder: 2
+        isCritical: false
+    evacuationPriority: "BASSE"
+    maxEvacuationTimeMinutes: 120
+    transportType: "Transport collectif / Marche"
+    destinationType: "PRV / Centre de soins"
+    contraindications: []
+    alertMessages:
+      - "Blessé léger - Diriger vers PRV"
+    radioCode: "ALPHA"
+  blackProtocol:
+    categoryCode: "BLACK"
+    categoryName: "Décédé"
+    categoryColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    definition: "Victime décédée ou dont le pronostic est dépassé compte tenu des 
+      ressources disponibles. Ne pas entreprendre de réanimation."
+    criteria:
+      - "Absence de respiration après LVA"
+      - "Blessures incompatibles avec la vie"
+      - "Signes de mort certaine"
+    immediateActions:
+      - actionId: "BLK-01"
+        actionName: "Confirmation Décès"
+        description: "Vérifier absence de pouls, respiration, réactivité pupillaire"
+        requiredEquipment: []
+        estimatedDuration: 30
+        priorityOrder: 1
+        isCritical: false
+      - actionId: "BLK-02"
+        actionName: "Couvrir le Corps"
+        description: "Recouvrir dignement avec un drap ou couverture"
+        requiredEquipment: ["Drap", "Couverture"]
+        estimatedDuration: 30
+        priorityOrder: 2
+        isCritical: false
+      - actionId: "BLK-03"
+        actionName: "Balisage"
+        description: "Marquer l'emplacement, ne pas déplacer"
+        requiredEquipment: ["Bracelet identification"]
+        estimatedDuration: 30
+        priorityOrder: 3
+        isCritical: false
+      - actionId: "BLK-04"
+        actionName: "Documentation"
+        description: "Noter heure de constat, emplacement, description"
+        requiredEquipment: []
+        estimatedDuration: 60
+        priorityOrder: 4
+        isCritical: false
+    evacuationPriority: "AUCUNE"
+    maxEvacuationTimeMinutes: 0
+    transportType: "Aucun"
+    destinationType: "Zone de regroupement des corps"
+    contraindications:
+      - description: "Ne pas entreprendre de RCP en situation de catastrophe"
+        reason: "Ressources limitées, autres victimes à sauver"
+        category: "BLACK"
+      - description: "Ne pas déplacer le corps sans autorisation"
+        reason: "Préservation des preuves pour enquête"
+        category: "BLACK"
+    alertMessages:
+      - "Décès constaté"
+    radioCode: "OMEGA"

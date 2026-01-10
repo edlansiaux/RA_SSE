@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: victimprofileso-script-guid-placeholder, type: 3}
+  m_Name: VictimProfile_Green_Contusions
+  m_EditorClassIdentifier: 
+  profileId: VP_GRN_CONT_001
+  profileName: Contusions Multiples
+  description: "Patient valide présentant des contusions multiples sans gravité. Choqué émotionnellement mais état stable. Peut se déplacer seul vers la zone d'attente."
+  triageCategory: 2
+  baseVitalSigns:
+    heartRate: 95
+    respiratoryRate: 18
+    bloodPressureSystolic: 128
+    bloodPressureDiastolic: 78
+    oxygenSaturation: 98
+    temperature: 36.8
+    consciousnessLevel: 0
+    painLevel: 4
+  injuries:
+    - injuryType: 7
+      severity: 1
+      bodyLocation: 6
+      description: "Contusions membres supérieurs"
+      bleedingRate: 0
+      isTreated: false
+    - injuryType: 7
+      severity: 1
+      bodyLocation: 8
+      description: "Contusions membres inférieurs"
+      bleedingRate: 0
+      isTreated: false
+    - injuryType: 2
+      severity: 1
+      bodyLocation: 0
+      description: "Petites plaies superficielles du visage"
+      bleedingRate: 0.2
+      isTreated: false
+  canWalk: true
+  canFollowCommands: true
+  hasSpontaneousBreathing: true
+  hasRadialPulse: true
+  evolutionProfile:
+    deteriorationRate: 0.0
+    timeToDeathWithoutTreatment: 0
+    responseToTreatment: 1.0
+  audioClips: []
+  animations: []
+  skinMaterial: {fileID: 0}

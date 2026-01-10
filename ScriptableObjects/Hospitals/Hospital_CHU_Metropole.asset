@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000002, type: 3}
+  m_Name: Hospital_CHU_Metropole
+  m_EditorClassIdentifier: RASSE.Data.HospitalProfileSO
+  hospitalId: HOP-CHU001
+  hospitalName: CHU Métropole
+  finess: "590000001"
+  hospitalType: 0
+  address: "2 Avenue Oscar Lambret"
+  city: "Lille"
+  postalCode: "59000"
+  worldPosition: {x: -100, y: 0, z: 200}
+  gpsCoordinates: {x: 50.6108, y: 3.0348}
+  distanceFromSceneKm: 8.5
+  totalBeds: 1500
+  emergencyBeds: 80
+  availableBeds: 25
+  surgeCapacity: 150
+  planBlancActivated: false
+  specialties:
+    - specialtyName: Urgences Générales
+      type: 0
+      availableBeds: 15
+      totalBeds: 40
+      h24Available: true
+      currentWaitTimeMinutes: 45
+    - specialtyName: Centre de Traumatologie
+      type: 1
+      availableBeds: 5
+      totalBeds: 15
+      h24Available: true
+      currentWaitTimeMinutes: 10
+    - specialtyName: Réanimation Polyvalente
+      type: 7
+      availableBeds: 3
+      totalBeds: 30
+      h24Available: true
+      currentWaitTimeMinutes: 0
+    - specialtyName: Neurochirurgie
+      type: 3
+      availableBeds: 4
+      totalBeds: 20
+      h24Available: true
+      currentWaitTimeMinutes: 30
+    - specialtyName: Chirurgie Générale
+      type: 8
+      availableBeds: 8
+      totalBeds: 40
+      h24Available: true
+      currentWaitTimeMinutes: 60
+    - specialtyName: Cardiologie
+      type: 4
+      availableBeds: 3
+      totalBeds: 25
+      h24Available: true
+      currentWaitTimeMinutes: 20
+    - specialtyName: Orthopédie
+      type: 5
+      availableBeds: 6
+      totalBeds: 30
+      h24Available: true
+      currentWaitTimeMinutes: 90
+  resources:
+    operatingRooms: 20
+    availableOperatingRooms: 5
+    scanners: 4
+    irmMachines: 3
+    xrayRooms: 8
+    icuBeds: 30
+    availableIcuBeds: 3
+    ventilators: 40
+    availableVentilators: 8
+    bloodBankAvailable: true
+  mainPhoneNumber: "03 20 44 59 62"
+  emergencyPhoneNumber: "03 20 44 60 00"
+  samuPhoneNumber: "15"
+  contacts:
+    - role: Médecin Régulateur SAMU
+      name: Dr. Martin Dupont
+      phoneNumber: "03 20 44 60 15"
+      email: "regulation@chu-lille.fr"
+      isAvailable: true
+    - role: Directeur des Urgences
+      name: Dr. Sophie Lambert
+      phoneNumber: "03 20 44 60 01"
+      email: "urgences@chu-lille.fr"
+      isAvailable: true
+  averageWaitTimeMinutes: 45
+  estimatedTravelTimeMinutes: 15
+  traumaPriorityScore: 95
+  acceptsHelicopter: true
+  h24Emergency: true
+  fhirEnabled: true
+  hl7Enabled: true
+  fhirEndpoint: "https://fhir.chu-lille.fr/r4"
+  hl7EndpointIP: "192.168.1.100"
+  hl7Port: 2575
+  hospitalColor: {r: 0.2, g: 0.4, b: 0.8, a: 1}
+  lowCapacityColor: {r: 1, g: 0.8, b: 0, a: 1}
+  noCapacityColor: {r: 0.9, g: 0.2, b: 0.2, a: 1}

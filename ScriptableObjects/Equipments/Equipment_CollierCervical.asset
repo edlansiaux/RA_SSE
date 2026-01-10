@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000005, type: 3}
+  m_Name: Equipment_CollierCervical
+  m_EditorClassIdentifier: RASSE.Data.EquipmentSO
+  equipmentId: EQP-COL001
+  equipmentName: "Collier Cervical Rigide"
+  codeName: "COLLIER"
+  description: "Collier cervical rigide pour immobilisation du rachis cervical. 
+    Différentes tailles disponibles (S, M, L, XL). Mise en place systématique 
+    en cas de traumatisme à haute cinétique."
+  category: 3
+  requiredSkill: 1
+  compatibility:
+    red: true
+    yellow: true
+    green: false
+    black: false
+  usageSteps:
+    - stepNumber: 1
+      instruction: "Maintien tête en position neutre"
+      details: "Un aide maintient la tête dans l'axe, regard horizontal"
+      estimatedDuration: 5
+    - stepNumber: 2
+      instruction: "Mesurer la taille"
+      details: "Mesurer du menton à l'épaule pour choisir la bonne taille"
+      estimatedDuration: 10
+    - stepNumber: 3
+      instruction: "Positionner la partie postérieure"
+      details: "Glisser la partie arrière sous la nuque"
+      estimatedDuration: 15
+    - stepNumber: 4
+      instruction: "Rabattre la partie antérieure"
+      details: "Positionner la mentonnière et fermer les sangles"
+      estimatedDuration: 15
+    - stepNumber: 5
+      instruction: "Vérifier l'ajustement"
+      details: "Le collier doit être serré mais permettre la respiration"
+      estimatedDuration: 10
+  isConsumable: true
+  isReusable: false
+  usageDurationSeconds: 60
+  quantityPerKit: 4
+  indications: "Traumatisme crânien, accident à haute cinétique, chute de hauteur, 
+    douleur cervicale, déficit neurologique, trouble de conscience post-traumatique."
+  contraindications: "Obstruction des voies aériennes (priorité à la LVA). 
+    Déformation cervicale majeure évidente."
+  applicableInjuries:
+    - "HeadTrauma"
+    - "SpinalInjury"
+    - "Multiple"
+  effectiveness: 0.90
+  correctUsagePoints: 30
+  uiColor: {r: 0.3, g: 0.6, b: 1, a: 1}

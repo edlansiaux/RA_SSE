@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: scenarioprofileso-script-guid-placeholder, type: 3}
+  m_Name: Scenario_BuildingCollapse
+  m_EditorClassIdentifier: 
+  scenarioId: SCN_COLLAPSE_001
+  scenarioName: Effondrement de Bâtiment
+  description: "Un immeuble de bureaux de 5 étages s'est partiellement effondré suite à une explosion de gaz. De nombreuses victimes sont piégées sous les décombres. Les équipes de secours doivent coordonner le triage avec les opérations de sauvetage-déblaiement."
+  difficulty: 3
+  estimatedDuration: 45
+  maxVictims: 35
+  victimDistribution:
+    redPercentage: 25
+    yellowPercentage: 30
+    greenPercentage: 35
+    blackPercentage: 10
+  environmentConditions:
+    timeOfDay: 2
+    weather: 0
+    visibility: 0.6
+    noiseLevel: 0.8
+  dangerZones:
+    - zoneType: 4
+      position: {x: 0, y: 0, z: 20}
+      radius: 25
+      dangerLevel: 4
+      description: "Zone d'effondrement principal - Risque de sur-accident"
+    - zoneType: 1
+      position: {x: 15, y: 0, z: 25}
+      radius: 10
+      dangerLevel: 3
+      description: "Fuite de gaz détectée"
+  objectives:
+    - "Sécuriser le périmètre et identifier les zones à risque"
+    - "Effectuer le triage START de toutes les victimes accessibles"
+    - "Coordonner avec les équipes USAR pour les victimes piégées"
+    - "Prioriser l'évacuation des victimes rouges"
+    - "Établir un Poste Médical Avancé à distance de sécurité"
+  availableResources:
+    - "4 équipes de secouristes PSE2"
+    - "2 équipes SMUR"
+    - "3 ambulances VSAV"
+    - "1 équipe cynotechnique"
+    - "2 équipes USAR (Urban Search and Rescue)"
+  learningObjectives:
+    - "Gestion du triage en environnement instable"
+    - "Coordination multi-services"
+    - "Priorisation avec ressources limitées"
+    - "Réévaluation continue des victimes"
+  requiredEquipment:
+    - {fileID: 11400000, guid: equipment-garrot-guid, type: 2}
+    - {fileID: 11400000, guid: equipment-collier-guid, type: 2}
+    - {fileID: 11400000, guid: equipment-attelle-guid, type: 2}
+  sceneToBuild: Scenario_BuildingCollapse

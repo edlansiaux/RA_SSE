@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: victimprofileso-script-guid-placeholder, type: 3}
+  m_Name: VictimProfile_Red_HeadTrauma
+  m_EditorClassIdentifier: 
+  profileId: VP_RED_HEAD_001
+  profileName: Traumatisme Crânien Grave
+  description: "Patient présentant un traumatisme crânien grave avec altération de la conscience. Score de Glasgow 8. Nécessite une prise en charge neurochirurgicale urgente."
+  triageCategory: 0
+  baseVitalSigns:
+    heartRate: 58
+    respiratoryRate: 14
+    bloodPressureSystolic: 165
+    bloodPressureDiastolic: 95
+    oxygenSaturation: 94
+    temperature: 37.0
+    consciousnessLevel: 3
+    painLevel: 0
+  injuries:
+    - injuryType: 5
+      severity: 4
+      bodyLocation: 0
+      description: "Traumatisme crânien grave - Glasgow 8 - Anisocorie droite"
+      bleedingRate: 0.5
+      isTreated: false
+    - injuryType: 2
+      severity: 2
+      bodyLocation: 0
+      description: "Plaie du cuir chevelu avec saignement modéré"
+      bleedingRate: 2
+      isTreated: false
+  canWalk: false
+  canFollowCommands: false
+  hasSpontaneousBreathing: true
+  hasRadialPulse: true
+  evolutionProfile:
+    deteriorationRate: 0.12
+    timeToDeathWithoutTreatment: 1800
+    responseToTreatment: 0.5
+  audioClips: []
+  animations: []
+  skinMaterial: {fileID: 0}

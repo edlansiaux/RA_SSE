@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00000000000000000000000000000003, type: 3}
+  m_Name: VictimProfile_Green_Minor
+  m_EditorClassIdentifier: RASSE.Data.VictimProfileSO
+  profileId: VIC-GRE-MIN01
+  profileName: "Urgence Dépassée - Blessé Léger"
+  description: "Victime ambulatoire avec blessures mineures. Peut marcher seule, 
+    état stable. Peut être dirigée vers le PRV (Point de Regroupement des Victimes)."
+  defaultName: "Victime"
+  gender: 0
+  ageMin: 20
+  ageMax: 70
+  startCategory: "GREEN"
+  categoryColor: {r: 0, g: 1, b: 0, a: 1}
+  triagePriority: 5
+  primaryInjury: 0
+  primarySeverity: 0
+  injuries:
+    - type: 0
+      severity: 0
+      bodyLocation: "Genou droit"
+      visualDescription: "Écorchure superficielle"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 0
+    - type: 0
+      severity: 0
+      bodyLocation: "Mains"
+      visualDescription: "Petites coupures aux paumes"
+      isVisible: true
+      requiresThermal: false
+      bleedingRate: 0
+  vitalSigns:
+    respiratoryRate: 16
+    respiratoryDistress: false
+    airwayObstructed: false
+    heartRate: 88
+    systolicBP: 130
+    diastolicBP: 82
+    capillaryRefillTime: 1.0
+    glasgowScore: 15
+    pupilsReactive: true
+    conscious: true
+    responds: true
+    temperature: 36.8
+    spO2: 99
+    skinColor: "Normal"
+  behavior:
+    canWalk: true
+    canSpeak: true
+    isAgitated: false
+    isUnconscious: false
+    isTrapped: false
+    cooperationLevel: 1.0
+    verbalResponse: "Je vais bien, juste quelques égratignures. Aidez les autres d'abord."
+  evolution:
+    timeToDeterioration: 0
+    respiratoryRateChange: 0
+    heartRateChange: 0
+    bloodLossRate: 0
+    glasgowChange: 0
+    deterioratedCategory: "GREEN"
+  canDeteriorate: false
+  canImproveWithTreatment: false
+  skinTint: {r: 1, g: 0.95, b: 0.9, a: 1}
+  hasVisibleBlood: false
+  hasVisibleBurns: false
+  hasVisibleFracture: false
+  dirtLevel: 0.5
+  vocalFrequency: 0.2
+  correctTriagePoints: 50
+  incorrectTriagePenalty: -25
+  missedEvacuationPenalty: -25

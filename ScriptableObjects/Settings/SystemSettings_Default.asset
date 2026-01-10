@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: systemsettings-so-script-guid-placeholder, type: 3}
+  m_Name: SystemSettings_Default
+  m_EditorClassIdentifier: 
+  
+  # === IDENTIFICATION ===
+  systemVersion: "1.0.0"
+  buildDate: "2024"
+  configurationName: "Production - France"
+  
+  # === MATÉRIEL (Bloc 1) ===
+  arGlasses:
+    model: "RealWear Navigator 520"
+    manufacturer: "RealWear"
+    displayResolution: {x: 1920, y: 1080}
+    fieldOfView: 20
+    refreshRate: 60
+    hasRGBCamera: 1
+    rgbResolution: {x: 1920, y: 1080}
+    hasThermalCamera: 1
+    thermalResolution: {x: 640, y: 480}
+    batteryCapacityMAh: 5000
+    targetAutonomyHours: 8
+    ipRating: "IP66"
+    dropResistance: "MIL-STD-810H"
+  
+  # === PRÉCISION (NFR-ACC) ===
+  accuracy:
+    targetDetectionAccuracy: 95
+    maxFalsePositiveRate: 5
+    targetTriageAccuracy: 95
+    maxGuidancePrecisionMeters: 2
+    respiratoryRateToleranceBPM: 2
+    heartRateToleranceBPM: 5
+    temperatureToleranceC: 0.5
+    spO2TolerancePercent: 2
+  
+  # === PERFORMANCE (NFR-VIT) ===
+  performance:
+    maxLatencyOfflineSeconds: 30
+    maxLatencyOnlineSeconds: 10
+    rgbAnalysisDuration: 2
+    thermalAnalysisDuration: 2
+    fusionDuration: 1
+    validationDuration: 0.5
+    maxUIResponseMs: 100
+    animationDuration: 0.3
+  
+  # === ROBUSTESSE (NFR-ROB) ===
+  robustness:
+    minLightLevel: 0.1
+    maxSmokeLevel: 0.7
+    maxRainIntensity: 0.8
+    maxAccuracyDegradation: 0.15
+    maxReconnectionAttempts: 5
+    reconnectionDelaySeconds: 5
+  
+  # === SÉCURITÉ (NFR-SEC) ===
+  security:
+    encryptionAlgorithm: "AES-256"
+    communicationProtocol: "TLS 1.3"
+    enforceEncryption: 1
+    requireAuthentication: 1
+    sessionTimeoutMinutes: 30
+    maxLoginAttempts: 3
+    enableAuditLogging: 1
+    auditRetentionDays: 365
+    anonymizeExports: 0
+    requireConsent: 1
+    dataRetentionDays: 30
+  
+  # === INTEROPÉRABILITÉ (NFR-INT) ===
+  interoperability:
+    enableFHIR: 1
+    fhirVersion: "R4"
+    defaultFHIREndpoint: "https://hospital.local/fhir"
+    enableHL7: 1
+    hl7Version: "2.5"
+    defaultHL7Port: 2575
+    autoExportOnEvacuation: 1
+    exportFormat: "FHIR"
+  
+  # === EXPÉRIENCE UTILISATEUR (NFR-UX) ===
+  ux:
+    enableHandsFreeMode: 1
+    enableVoiceCommands: 1
+    enableGestures: 0
+    voiceLanguage: "fr-FR"
+    voiceActivationThreshold: 0.7
+    wakeWord: "RASSE"
+    enableHapticFeedback: 1
+    enableAudioFeedback: 1
+    feedbackVolume: 0.8
+    textScaleFactor: 1
+    highContrastMode: 0
+    colorBlindMode: 0
+  
+  # === RÉGLEMENTATION (NFR-REG) ===
+  regulatory:
+    isoCompliance: "ISO 14971"
+    iecCompliance: "IEC 62304"
+    mdRegulation: "MDR 2017/745"
+    deviceClass: "IIa"
+    intendedUse: "Aide au triage médical en situation de catastrophe - Protocole START"
+    technicalFileVersion: "1.0"
+    riskAnalysisVersion: "1.0"
+  
+  # === SIMULATION ===
+  timeScale: 1
+  debugMode: 0
+  autoSave: 1
+  autoSaveIntervalMinutes: 5

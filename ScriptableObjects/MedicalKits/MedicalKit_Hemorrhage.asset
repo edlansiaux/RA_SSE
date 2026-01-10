@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: medicalkit-so-script-guid-placeholder, type: 3}
+  m_Name: MedicalKit_Hemorrhage
+  m_EditorClassIdentifier: 
+  
+  # === IDENTIFICATION ===
+  kitId: "KIT_HEMO_001"
+  kitName: "Kit Hémorragie Massive - Damage Control"
+  kitType: 4  # KitHemorragie
+  description: "Kit spécialisé pour le contrôle des hémorragies massives en situation d'urgence. Contient garrots tactiques, pansements hémostatiques et compressifs. Adapté aux situations de catastrophe avec afflux massif de victimes traumatisées."
+  kitIcon: {fileID: 0}
+  
+  # === CARACTÉRISTIQUES PHYSIQUES ===
+  totalWeightKg: 4.8
+  dimensionsCm: {x: 35, y: 25, z: 15}
+  kitColor: {r: 0.8, g: 0, b: 0, a: 1}  # Rouge foncé
+  isWaterResistant: 1
+  isShockResistant: 1
+  
+  # === CONTENU DU KIT ===
+  contents:
+    # Garrots
+    - itemName: "Garrot tourniquet tactique CAT"
+      quantity: 4
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 85
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Garrot pneumatique membre inférieur"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 250
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Garrot jonctionnel (SAM-JT)"
+      quantity: 1
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 450
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Pansements hémostatiques
+    - itemName: "Pansement hémostatique Celox"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 35
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Pansement hémostatique QuikClot Combat Gauze"
+      quantity: 5
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 100
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Granulés hémostatiques sachets"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 15
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    
+    # Pansements compressifs
+    - itemName: "Pansement compressif israélien 6\""
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 120
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 60
+    - itemName: "Pansement compressif israélien 4\""
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 80
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 60
+    - itemName: "Bande élastique cohésive 10cm"
+      quantity: 10
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 50
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    
+    # Pansements thoraciques
+    - itemName: "Pansement thoracique 3 côtés (Asherman)"
+      quantity: 4
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 30
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 48
+    - itemName: "Pansement thoracique occlusif (HyFin)"
+      quantity: 4
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 35
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 48
+    
+    # Accessoires
+    - itemName: "Ciseaux trauma"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 100
+      isConsumable: 0
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Marqueur indélébile (heure garrot)"
+      quantity: 3
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 15
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+    - itemName: "Gants nitrile renforcés (paires)"
+      quantity: 20
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 15
+      isConsumable: 1
+      hasExpiryDate: 1
+      shelfLifeMonths: 36
+    - itemName: "Couverture hémostatique"
+      quantity: 2
+      equipmentReference: {fileID: 0}
+      unitWeightGrams: 200
+      isConsumable: 1
+      hasExpiryDate: 0
+      shelfLifeMonths: 0
+  
+  # === UTILISATION ===
+  requiredCompetency: 1  # EquipierPSE1
+  maxVictimsTreatable: 10
+  suitableForPediatric: 1
+  suitableForAdult: 1
+  requiresSpecialStorage: 0
+  storageTemperatureRange: {x: 0, y: 40}
+  
+  # === PROTOCOLES ASSOCIÉS ===
+  associatedProtocols:
+    - protocolName: "MARCHE - Massive hemorrhage"
+      description: "Protocole MARCHE - Contrôle hémorragie massive"
+      steps:
+        - "M - Massive hemorrhage: identifier et contrôler les hémorragies massives"
+        - "Si hémorragie de membre: garrot tourniquet immédiat"
+        - "Si hémorragie jonctionnelle: compression + packing + garrot jonctionnel"
+        - "Si hémorragie thoracique: pansement occlusif"
+        - "Noter l'heure de pose de chaque garrot au marqueur"
+        - "Ne JAMAIS desserrer un garrot posé"
+        - "Surveiller l'état hémodynamique"
+      applicableTriageCategories:
+        - "ROUGE"
+    - protocolName: "Wound Packing - Plaie jonctionnelle"
+      description: "Technique de packing de plaie hémorragique"
+      steps:
+        - "Exposer complètement la plaie"
+        - "Identifier le point de saignement"
+        - "Insérer la gaze hémostatique dans la plaie"
+        - "Remplir la cavité en maintenant une pression directe"
+        - "Appliquer une compression continue 3 minutes minimum"
+        - "Maintenir avec pansement compressif"
+        - "Surveiller: réapparition du saignement"
+      applicableTriageCategories:
+        - "ROUGE"
+    - protocolName: "Pneumothorax ouvert"
+      description: "Prise en charge d'une plaie thoracique soufflante"
+      steps:
+        - "Identifier la plaie thoracique (bulles, souffle)"
+        - "Appliquer pansement occlusif 3 côtés ou valve"
+        - "Côté libre vers le bas"
+        - "Position demi-assise si possible"
+        - "Surveiller: signes de pneumothorax suffocant"
+        - "Si aggravation: soulever le pansement pour évacuer l'air"
+        - "Oxygénothérapie si disponible"
+      applicableTriageCategories:
+        - "ROUGE"
+  
+  # === TRIAGE ===
+  applicableToRed: 1
+  applicableToYellow: 1
+  applicableToGreen: 0
+  applicableToBlack: 0
+  
+  # === MAINTENANCE ===
+  checkFrequencyDays: 30
+  replacementCostEuros: 850
+  supplierReference: "REF-HEMO-2024-TACTICAL"
+  
+  # === PARAMÈTRES SIMULATION ===
+  avgUsageTimeSeconds: 120
+  treatmentEfficiency: 0.85
+  usableInDegradedConditions: 1
+  kitPrefab: {fileID: 0}

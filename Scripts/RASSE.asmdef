@@ -1,0 +1,29 @@
+{
+    "name": "RASSE",
+    "rootNamespace": "RASSE",
+    "references": [
+        "Unity.TextMeshPro",
+        "Unity.AI.Navigation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false,
+    "additionalNamespaces": [
+        "RASSE.Core",
+        "RASSE.ImageAnalysis",
+        "RASSE.Hardware",
+        "RASSE.Medical",
+        "RASSE.Interoperability",
+        "RASSE.Compliance",
+        "RASSE.Coordination",
+        "RASSE.UI",
+        "RASSE.Audio",
+        "RASSE.Training"
+    ]
+}

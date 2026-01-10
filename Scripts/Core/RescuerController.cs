@@ -315,5 +315,96 @@ namespace RASSE.Core
             Gizmos.DrawLine(transform.position, transform.position + leftBound);
             Gizmos.DrawLine(transform.position, transform.position + rightBound);
         }
+
+        #region Health System
+
+        [Header("=== SANTÉ ===")]
+        [SerializeField] private float maxHealth = 100f;
+        private float currentHealth;
+        private bool isIncapacitated = false;
+
+        /// <summary>
+        /// Initialise la santé du secouriste
+        /// </summary>
+        private void InitializeHealth()
+        {
+            currentHealth = maxHealth;
+            isIncapacitated = false;
+        }
+
+        /// <summary>
+        /// Applique des dégâts au secouriste (zones de danger)
+        /// </summary>
+        public void TakeDamage(float damage)
+        {
+            if (isIncapacitated) return;
+
+            currentHealth -= damage;
+            currentHealth = Mathf.Max(0, currentHealth);
+
+            Debug.Log($"[Rescuer] Dégâts reçus: {damage} | Santé: {currentHealth}/{maxHealth}");
+
+            // Feedback visuel/sonore
+            OnDamageTaken(damage);
+
+            if (currentHealth <= 0)
+            {
+                OnIncapacitated();
+            }
+        }
+
+        /// <summary>
+        /// Soigne le secouriste
+        /// </summary>
+        public void Heal(float amount)
+        {
+            currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        }
+
+        /// <summary>
+        /// Appelé quand le secouriste prend des dégâts
+        /// </summary>
+        private void OnDamageTaken(float damage)
+        {
+            // Effet visuel rouge sur l'écran
+            // Vibration haptique si disponible
+            EventManager.Instance?.Publish(new ShowNotificationEvent
+            {
+                Title = "Alerte",
+                Message = "Vous êtes dans une zone dangereuse!",
+                Type = NotificationType.Warning,
+                Duration = 2f
+            });
+        }
+
+        /// <summary>
+        /// Appelé quand le secouriste est incapacité
+        /// </summary>
+        private void OnIncapacitated()
+        {
+            isIncapacitated = true;
+            Debug.LogWarning("[Rescuer] Secouriste incapacité!");
+
+            // Désactiver les contrôles
+            enabled = false;
+
+            // Notifier le GameManager
+            EventManager.Instance?.Publish(new VictimStateChangedEvent
+            {
+                VictimId = "RESCUER",
+                PreviousState = "Active",
+                NewState = "Incapacitated"
+            });
+        }
+
+        /// <summary>
+        /// Propriétés de santé
+        /// </summary>
+        public float CurrentHealth => currentHealth;
+        public float MaxHealth => maxHealth;
+        public float HealthPercentage => maxHealth > 0 ? currentHealth / maxHealth * 100f : 0f;
+        public bool IsIncapacitated => isIncapacitated;
+
+        #endregion
     }
 }

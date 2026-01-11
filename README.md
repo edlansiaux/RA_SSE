@@ -1,294 +1,189 @@
-# 📁 Unity RA-SSE Project Structure
+# 🏥 RA-SSE: Augmented Reality Medical Triage Simulator
 
-**Author:** Edouard Lansiaux  
-**Project:** RA-SSE - Augmented Reality Medical Triage Simulator for Mass Casualty Incidents  
-**Version:** 1.0.0  
-**Date:** January 2026
+[![Unity](https://img.shields.io/badge/Unity-2022.3%20LTS-black?logo=unity)](https://unity.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/Platform-RealWear%20|%20Android-green)](https://www.realwear.com/)
+[![Protocol](https://img.shields.io/badge/Protocol-START%20Triage-red)](https://en.wikipedia.org/wiki/Simple_triage_and_rapid_treatment)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)]()
 
----
-
-```
-UnityProject_RA_SSE/
-│
-├── 📄 .gitignore                          # Git configuration
-├── 📄 CHANGELOG.md                        # Version history
-├── 📄 CORRESPONDANCE_RAPPORT.md           # Academic report mapping
-├── 📄 DEPLOYMENT.md                       # Deployment guide
-├── 📄 GUIDE_INSTALLATION.md               # Installation instructions
-├── 📄 LICENSE                             # MIT License
-├── 📄 MAPPING_RAPPORT_CODE.md             # Code/specifications mapping
-├── 📄 QUICK_START.md                      # Quick start guide
-├── 📄 README.md                           # Main documentation
-│
-├── 📁 Materials/                          # Unity Materials (5 files)
-│   ├── Mat_DangerZone.mat                 # Danger zone material
-│   ├── Mat_TriageZone_Black.mat           # Black zone (deceased)
-│   ├── Mat_TriageZone_Green.mat           # Green zone (minor injuries)
-│   ├── Mat_TriageZone_Red.mat             # Red zone (immediate)
-│   └── Mat_TriageZone_Yellow.mat          # Yellow zone (delayed)
-│
-├── 📁 Packages/                           # Unity dependencies
-│   └── manifest.json                      # Required packages list
-│
-├── 📁 Prefabs/                            # Unity Prefabs (12 files)
-│   ├── 📁 AR/
-│   │   ├── AR_NavigationMarker.prefab     # AR navigation marker
-│   │   └── AR_VictimOverlay.prefab        # AR victim overlay
-│   ├── 📁 Ambulances/
-│   │   └── Ambulance_VSAV.prefab          # VSAV emergency vehicle
-│   ├── 📁 Environment/
-│   │   ├── Env_DangerZone.prefab          # Danger zone
-│   │   ├── PMA_PosteMedicalAvance.prefab  # Advanced Medical Post
-│   │   └── TriageZone_Marker.prefab       # Triage zone marker
-│   ├── 📁 Hospitals/
-│   │   ├── Hospital_Generic.prefab        # Generic hospital
-│   │   └── Hospital_TraumaCenter.prefab   # Trauma center
-│   ├── 📁 Rescuers/
-│   │   └── Rescuer_Player.prefab          # Player/Rescuer
-│   ├── 📁 UI/
-│   │   ├── Canvas_HUD_AR.prefab           # AR HUD interface
-│   │   └── Canvas_MainMenu.prefab         # Main menu
-│   └── 📁 Victims/
-│       └── Victim_Template.prefab         # Victim template
-│
-├── 📁 ProjectSettings/                    # Unity Configuration (7 files)
-│   ├── EditorBuildSettings.asset          # Build scenes list
-│   ├── InputManager.asset                 # Controls configuration
-│   ├── Physics2DSettings.asset            # 2D physics settings
-│   ├── ProjectSettings.asset              # General project settings
-│   ├── QualitySettings.asset              # Quality levels
-│   ├── TagManager.asset                   # Tags and Layers
-│   └── TimeManager.asset                  # Time settings
-│
-├── 📁 Resources/                          # Dynamically loadable assets
-│   └── README.md                          # Resources documentation
-│
-├── 📁 Scenes/                             # Unity Scenes (5 files)
-│   ├── MainMenu.unity                     # Main menu
-│   ├── Scenario_BuildingCollapse.unity    # Scenario: Building collapse
-│   ├── Scenario_IndustrialExplosion.unity # Scenario: Industrial explosion
-│   ├── Scenario_TrainAccident.unity       # Scenario: Train accident
-│   └── TrainingScene.unity                # Training/tutorial scene
-│
-├── 📁 ScriptableObjects/                  # Configurable data (27 files)
-│   ├── 📁 Equipment/                      # Medical equipment (5)
-│   │   ├── Equipment_Attelle.asset        # Moldable splint
-│   │   ├── Equipment_BAVU.asset           # Bag valve mask
-│   │   ├── Equipment_CollierCervical.asset# Cervical collar
-│   │   ├── Equipment_CouvertureSurvie.asset# Survival blanket
-│   │   └── Equipment_Garrot.asset         # Tourniquet
-│   ├── 📁 Hospitals/                      # Hospital profiles (3)
-│   │   ├── Hospital_CHU_Metropole.asset   # Metropolitan University Hospital
-│   │   ├── Hospital_CH_SaintVincent.asset # Saint-Vincent Hospital
-│   │   └── Hospital_CentreBrules.asset    # Burn Center
-│   ├── 📁 MedicalKits/                    # Medical kits (5)
-│   │   ├── MedicalKit_DSA.asset           # Defibrillator
-│   │   ├── MedicalKit_Hemorrhage.asset    # Hemorrhage kit
-│   │   ├── MedicalKit_PSE1.asset          # First Aid Kit Level 1
-│   │   ├── MedicalKit_PSE2.asset          # First Aid Kit Level 2
-│   │   └── MedicalKit_Trauma.asset        # Advanced trauma kit
-│   ├── 📁 Scenarios/                      # Scenario configurations (4)
-│   │   ├── Scenario_BuildingCollapse.asset# Building collapse config
-│   │   ├── Scenario_IndustrialExplosion.asset# Industrial explosion config
-│   │   ├── Scenario_TrainAccident.asset   # Train accident config
-│   │   └── Scenario_Tutorial.asset        # Tutorial config
-│   ├── 📁 Settings/                       # System settings (1)
-│   │   └── SystemSettings_Default.asset   # Default configuration
-│   ├── 📁 TriageProtocols/                # Triage protocols (1)
-│   │   └── TriageProtocol_START.asset     # START Protocol
-│   └── 📁 VictimProfiles/                 # Victim profiles (8)
-│       ├── VictimProfile_Black_Deceased.asset    # Black - Deceased
-│       ├── VictimProfile_Green_Contusions.asset  # Green - Contusions
-│       ├── VictimProfile_Green_Minor.asset       # Green - Minor injuries
-│       ├── VictimProfile_Red_HeadTrauma.asset    # Red - Head trauma
-│       ├── VictimProfile_Red_Hemorrhage.asset    # Red - Hemorrhage
-│       ├── VictimProfile_Red_Respiratory.asset   # Red - Respiratory distress
-│       ├── VictimProfile_Yellow_Burns.asset      # Yellow - Burns
-│       └── VictimProfile_Yellow_Fracture.asset   # Yellow - Fracture
-│
-├── 📁 Scripts/                            # C# Source Code (48 files)
-│   ├── 📄 RASSE.asmdef                    # Main Assembly Definition
-│   │
-│   ├── 📁 AR/                             # Augmented Reality (1)
-│   │   └── ARInterfaceController.cs       # AR interface controller
-│   │
-│   ├── 📁 Audio/                          # Audio management (1)
-│   │   └── AudioManager.cs                # Audio manager
-│   │
-│   ├── 📁 Compliance/                     # Regulatory compliance (1)
-│   │   └── RequirementsComplianceMonitor.cs# Compliance monitor
-│   │
-│   ├── 📁 Coordination/                   # Multi-agent coordination (1)
-│   │   └── SMACoordinationSystem.cs       # MAS system
-│   │
-│   ├── 📁 Core/                           # Core system (14)
-│   │   ├── Bootstrapper.cs                # Auto-initialization
-│   │   ├── EnumDefinitions.cs             # Enum definitions
-│   │   ├── EventManager.cs                # Event manager
-│   │   ├── GameConstants.cs               # Game constants
-│   │   ├── GameManager.cs                 # Main game manager
-│   │   ├── GameManager_original.cs        # GameManager backup
-│   │   ├── IInteractable.cs               # Interaction interface
-│   │   ├── RequirementsManager.cs         # Requirements manager
-│   │   ├── RescuerController.cs           # Rescuer controller
-│   │   ├── ScenarioManager.cs             # Scenario manager
-│   │   ├── SceneLoader.cs                 # Scene loader
-│   │   ├── Singleton.cs                   # Singleton pattern
-│   │   ├── StartTriageSystem.cs           # START triage system
-│   │   ├── SystemArchitecture.cs          # Architecture documentation
-│   │   └── VoiceCommandSimulator.cs       # Voice command simulator
-│   │
-│   ├── 📁 Data/                           # ScriptableObjects (9)
-│   │   ├── EquipmentSO.cs                 # Equipment definition
-│   │   ├── HospitalProfileSO.cs           # Hospital definition
-│   │   ├── MedicalKitSO.cs                # Medical kit definition
-│   │   ├── PatientRecordSystem.cs         # Patient record system
-│   │   ├── ScenarioProfileSO.cs           # Scenario definition
-│   │   ├── ScriptableObjects.cs           # ScriptableObjects base
-│   │   ├── SystemSettingsSO.cs            # System settings
-│   │   ├── TriageProtocolSO.cs            # Triage protocols
-│   │   └── VictimProfileSO.cs             # Victim profiles
-│   │
-│   ├── 📁 Editor/                         # Editor tools (3)
-│   │   ├── BuildConfiguration.cs          # Build configuration
-│   │   ├── RASSE.Editor.asmdef            # Editor Assembly Definition
-│   │   └── RASSEEditorTools.cs            # Custom tools
-│   │
-│   ├── 📁 Environment/                    # Environment (1)
-│   │   └── DangerZoneController.cs        # Danger zone controller
-│   │
-│   ├── 📁 Hardware/                       # Hardware (1)
-│   │   └── BatteryManager.cs              # Battery management
-│   │
-│   ├── 📁 Hospital/                       # Hospital management (2)
-│   │   ├── AmbulanceManager.cs            # Ambulance manager
-│   │   └── HospitalCoordinationSystem.cs  # Hospital coordination
-│   │
-│   ├── 📁 ImageAnalysis/                  # Image analysis (1)
-│   │   └── ImageAnalysisModule.cs         # RGB/thermal analysis module
-│   │
-│   ├── 📁 Interoperability/               # Interoperability (1)
-│   │   └── FHIRExportModule.cs            # FHIR/HL7 export
-│   │
-│   ├── 📁 Medical/                        # Medical protocols (1)
-│   │   └── FirstAidGuidanceModule.cs      # First aid guidance
-│   │
-│   ├── 📁 Navigation/                     # Navigation (1)
-│   │   └── NavigationSystem.cs            # Navigation system
-│   │
-│   ├── 📁 Training/                       # Training (1)
-│   │   └── TutorialManager.cs             # Tutorial manager
-│   │
-│   ├── 📁 UI/                             # User interface (4)
-│   │   ├── HUDController.cs               # HUD controller
-│   │   ├── MainMenuController.cs          # Main menu controller
-│   │   ├── PauseAndResultsUI.cs           # Pause and results UI
-│   │   └── UIManager.cs                   # UI manager
-│   │
-│   ├── 📁 Vehicles/                       # Vehicles (1)
-│   │   └── AmbulanceController.cs         # Ambulance controller
-│   │
-│   ├── 📁 Victim/                         # Victim management (2)
-│   │   ├── VictimController.cs            # Victim controller
-│   │   └── VictimSpawner.cs               # Victim spawner
-│   │
-│   └── 📁 Zones/                          # Zone management (2)
-│       ├── PMAController.cs               # AMP controller
-│       └── TriageZoneController.cs        # Triage zone controller
-│
-└── 📁 Tests/                              # Unit tests (2 files)
-    └── 📁 Editor/
-        ├── RASSE.Tests.Editor.asmdef      # Tests Assembly Definition
-        └── TriageSystemTests.cs           # Triage system tests
-```
+> **Augmented Reality training simulator for medical triage during Mass Casualty Incidents (MCI), implementing the START protocol on RealWear head-mounted displays.**
 
 ---
 
-## 📊 Summary by Category
+## 📖 About
 
-| Category | Files | Description |
-|----------|-------|-------------|
-| **Documentation** | 10 | README, guides, changelog |
-| **C# Scripts** | 48 | Simulator source code |
-| **Prefabs** | 12 | Unity prefabricated objects |
-| **ScriptableObjects** | 27 | Configurable data assets |
-| **Scenes** | 5 | Game levels |
-| **Materials** | 5 | Visual materials |
-| **ProjectSettings** | 7 | Unity configuration |
-| **Tests** | 2 | Unit tests |
-| **Packages** | 1 | Dependencies |
-| **Resources** | 1 | Dynamic assets |
-| **TOTAL** | **120** | Files |
+**RA-SSE** (Réalité Augmentée pour Situations Sanitaires Exceptionnelles) is a Unity-based training simulator designed to help first responders and medical personnel practice victim triage using the **START protocol** (Simple Triage and Rapid Treatment) in augmented reality.
 
----
+The simulator runs on **RealWear Navigator 500/520** head-mounted displays, enabling **hands-free operation** through voice commands - critical for emergency responders who need both hands free while treating patients.
 
-## 🏗️ Scripts Architecture
+### 🎯 Key Features
 
-```
-Scripts/ (48 files)
-├── Core/          (14) - Core: GameManager, Triage, Events
-├── Data/          (9)  - ScriptableObjects definitions
-├── UI/            (4)  - User interface
-├── Editor/        (3)  - Unity Editor tools
-├── Hospital/      (2)  - Hospital coordination
-├── Victim/        (2)  - Victim management
-├── Zones/         (2)  - Triage zones and AMP
-├── AR/            (1)  - Augmented reality
-├── Audio/         (1)  - Audio management
-├── Compliance/    (1)  - Regulatory compliance
-├── Coordination/  (1)  - Multi-agent system
-├── Environment/   (1)  - Danger zones
-├── Hardware/      (1)  - Hardware management
-├── ImageAnalysis/ (1)  - Image analysis
-├── Interoperability/(1)- FHIR/HL7 export
-├── Medical/       (1)  - Medical protocols
-├── Navigation/    (1)  - Guidance system
-├── Training/      (1)  - Training module
-└── Vehicles/      (1)  - Ambulances
-```
+- **🔴 START Triage Protocol** - Complete implementation with 4 categories (Immediate/Delayed/Minor/Deceased)
+- **👓 Augmented Reality** - Real-time victim detection and AR overlays via ARFoundation
+- **🎤 Voice Control** - Hands-free operation with voice commands ("RED", "YELLOW", "GREEN", "BLACK")
+- **🏥 Hospital Coordination** - Ambulance dispatch and hospital bed availability tracking
+- **📊 FHIR/HL7 Export** - Healthcare interoperability standards compliance
+- **🔋 Offline Mode** - Full functionality without network connectivity
+- **📱 Multi-Platform** - RealWear, Android tablets, Desktop (training mode)
 
 ---
 
-## ✅ Requirements Compliance
+## 🖼️ Screenshots
 
-### Functional Requirements (REQ-*)
-| ID | Description | Status |
-|----|-------------|--------|
-| REQ-1 | Victim detection ≥95% | ✅ Implemented |
-| REQ-2 | Vital signs analysis | ✅ Implemented |
-| REQ-3 | START classification | ✅ Implemented |
-| REQ-4 | Guidance ≤2m accuracy | ✅ Implemented |
-| REQ-5 | First aid protocols | ✅ Implemented |
-| REQ-6 | Real-time coordination | ✅ Implemented |
-| REQ-7 | FHIR/HL7 export | ✅ Implemented |
-
-### Non-Functional Requirements (NFR-*)
-| ID | Description | Status |
-|----|-------------|--------|
-| NFR-ACC | Accuracy ≥95% | ✅ Implemented |
-| NFR-VIT | Latency ≤30s offline | ✅ Implemented |
-| NFR-DIS | 8h battery life | ✅ Implemented |
-| NFR-LOC | Localization ≤2m | ✅ Implemented |
-| NFR-ROB | Degraded conditions | ✅ Implemented |
-| NFR-SEC | AES-256 + TLS 1.3 | ✅ Implemented |
-| NFR-INT | FHIR R4 + HL7 v2.5 | ✅ Implemented |
-| NFR-UX | Hands-free operation | ✅ Implemented |
-| NFR-REG | ISO/IEC/MDR compliance | ✅ Implemented |
+| Main Menu | Triage Scene | AR Victim Detection |
+|:---------:|:------------:|:-------------------:|
+| ![Menu](docs/screenshots/menu.png) | ![Triage](docs/screenshots/triage.png) | ![AR](docs/screenshots/ar_detection.png) |
 
 ---
 
 ## 🚀 Quick Start
 
-1. **Extract** `UnityProject_RA_SSE.zip`
-2. **Open** Unity Hub → Add → Select folder
-3. **Open** `Scenes/MainMenu.unity`
-4. **Play** ▶️
+### Prerequisites
+
+- **Unity 2022.3 LTS** or higher
+- **Android SDK** (API 28+) for RealWear builds
+- **Git LFS** (for large assets)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/edouard-lansiaux/ra-sse-simulator.git
+
+# Open in Unity Hub
+# File → Open Project → Select folder
+```
+
+### First Run
+
+1. Open `Scenes/MainMenu.unity`
+2. Press **Play** ▶️
+3. Select a scenario or start training
+
+### Build for RealWear
+
+```
+File → Build Settings → Android → Build
+```
 
 ---
 
-## 📜 License
+## 📁 Project Structure
 
-MIT License - See LICENSE file for details.
+```
+UnityProject_RA_SSE/
+├── 📁 Scenes/           → 5 Unity scenes (Menu, Training, 3 Scenarios)
+├── 📁 Scripts/          → 48 C# scripts
+│   ├── Core/            → Game management, triage system, events
+│   ├── AR/              → Augmented reality interface
+│   ├── Victim/          → Victim behavior and spawning
+│   ├── Hospital/        → Ambulance and hospital coordination
+│   └── ...
+├── 📁 Prefabs/          → 12 prefabricated objects
+├── 📁 ScriptableObjects/→ 27 data assets (victims, equipment, scenarios)
+├── 📁 Materials/        → Visual materials for triage zones
+└── 📁 ProjectSettings/  → Unity configuration
+```
+
+📄 See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for complete file listing.
+
+---
+
+## 🎮 Controls
+
+### Voice Commands (RealWear)
+| Command | Action |
+|---------|--------|
+| `"RED"` / `"ROUGE"` | Classify as Immediate |
+| `"YELLOW"` / `"JAUNE"` | Classify as Delayed |
+| `"GREEN"` / `"VERT"` | Classify as Minor |
+| `"BLACK"` / `"NOIR"` | Classify as Deceased |
+| `"NEXT"` / `"SUIVANT"` | Next victim |
+| `"EVACUATE"` / `"ÉVACUER"` | Request evacuation |
+
+### Keyboard (Desktop/Debug)
+| Key | Action |
+|-----|--------|
+| `WASD` | Movement |
+| `E` | Interact |
+| `T` | Confirm triage |
+| `Tab` | Next victim |
+| `P` | Pause |
+| `V` | Voice command input |
+
+---
+
+## 📋 Scenarios
+
+| Scenario | Victims | Difficulty | Description |
+|----------|:-------:|:----------:|-------------|
+| **Tutorial** | 5 | ⭐ | Basic triage training |
+| **Industrial Explosion** | 25 | ⭐⭐⭐ | Chemical plant accident |
+| **Train Accident** | 40 | ⭐⭐⭐ | Railway collision |
+| **Building Collapse** | 50 | ⭐⭐⭐⭐ | Earthquake aftermath |
+
+---
+
+## ✅ Compliance
+
+### Functional Requirements
+| ID | Requirement | Status |
+|----|-------------|:------:|
+| REQ-1 | Victim detection ≥95% accuracy | ✅ |
+| REQ-2 | Vital signs analysis | ✅ |
+| REQ-3 | START classification | ✅ |
+| REQ-4 | Navigation guidance ≤2m | ✅ |
+| REQ-5 | First aid protocols | ✅ |
+| REQ-6 | Real-time coordination | ✅ |
+| REQ-7 | FHIR/HL7 export | ✅ |
+
+### Standards Compliance
+- **ISO 14971:2019** - Medical device risk management
+- **IEC 62304:2006** - Medical device software lifecycle
+- **EU 2017/745** - Medical Device Regulation (MDR Class IIa)
+- **FHIR R4** - Healthcare interoperability
+- **HL7 v2.5** - Health Level Seven messaging
+
+---
+
+## 🛠️ Technical Stack
+
+| Component | Technology |
+|-----------|------------|
+| **Engine** | Unity 2022.3 LTS |
+| **AR Framework** | ARFoundation 5.1 + ARCore |
+| **Rendering** | Universal Render Pipeline (URP) |
+| **Input** | Unity Input System + Voice |
+| **Testing** | Unity Test Framework + NUnit |
+| **Target** | RealWear Navigator 500/520 |
+
+---
+
+## 📚 Documentation
+
+- [📖 Installation Guide](GUIDE_INSTALLATION.md)
+- [🚀 Quick Start](QUICK_START.md)
+- [📁 Project Structure](PROJECT_STRUCTURE.md)
+- [🔄 Changelog](CHANGELOG.md)
+- [📊 Report Mapping](CORRESPONDANCE_RAPPORT.md)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our contributing guidelines before submitting PRs.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -296,16 +191,26 @@ MIT License - See LICENSE file for details.
 
 **Edouard Lansiaux**
 
-Project developed as part of academic research on Mass Casualty Incidents (MCI) and the START medical triage protocol.
+- GitHub: [@edouard-lansiaux](https://github.com/edouard-lansiaux)
+- Project developed as part of academic research on Mass Casualty Incidents (MCI) and the START medical triage protocol.
 
 ---
 
-## 📚 References
+## 🙏 Acknowledgments
 
-- **START Protocol:** Simple Triage and Rapid Treatment  
-  Developed by Newport Beach Fire Department and Hoag Hospital, 1983.
+- **START Protocol** - Newport Beach Fire Department & Hoag Hospital (1983)
+- **RealWear** - Head-mounted display platform
+- **Unity Technologies** - Game engine
+- **ARFoundation** - Cross-platform AR framework
 
-- **Standards:**
-  - ISO 14971:2019 (Medical device risk management)
-  - IEC 62304:2006 (Medical device software lifecycle)
-  - EU Regulation 2017/745 (MDR - Medical Device Regulation)
+---
+
+## ⚠️ Disclaimer
+
+This software is a **training simulator** and should **NOT** be used for actual medical emergencies. The protocols presented are simplified for educational purposes. Always follow official medical guidelines and consult qualified healthcare professionals in real emergency situations.
+
+---
+
+<p align="center">
+  <b>🏥 Train Today. Save Lives Tomorrow. 🚑</b>
+</p>

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Victim
+  - Rescuer
+  - Equipment
+  - TriageZone
+  - DangerZone
+  - Hospital
+  - Ambulance
+  - PMA
+  - SpawnPoint
+  - Waypoint
+  - ARMarker
+  - InteractiveObject
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Victim
+  - Rescuer
+  - Equipment
+  - TriageZone
+  - DangerZone
+  - AROverlay
+  - Navigation
+  - Trigger
+  - Ground
+  - Obstacle
+  - Interactive
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1
+    locked: 0
+  - name: Ground
+    uniqueID: 2
+    locked: 0
+  - name: Victims
+    uniqueID: 3
+    locked: 0
+  - name: Equipment
+    uniqueID: 4
+    locked: 0
+  - name: UI_World
+    uniqueID: 5
+    locked: 0
+  - name: AR_Overlay
+    uniqueID: 6
+    locked: 0
+  - name: UI_Screen
+    uniqueID: 7
+    locked: 0

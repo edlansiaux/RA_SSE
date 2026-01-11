@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Edouard Lansiaux
+Copyright (c) 2026 RA-SSE Project Team
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,44 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+AVERTISSEMENT MÉDICAL / MEDICAL DISCLAIMER
+
+Ce logiciel est un outil de simulation et de formation uniquement.
+Il ne doit PAS être utilisé pour prendre des décisions médicales réelles.
+En situation d'urgence réelle, contactez les services d'urgence (SAMU: 15, 
+Pompiers: 18, Numéro d'urgence européen: 112).
+
+This software is a simulation and training tool only.
+It should NOT be used to make real medical decisions.
+In a real emergency situation, contact emergency services immediately.
+
+---
+
+CONFORMITÉ RÉGLEMENTAIRE / REGULATORY COMPLIANCE
+
+Ce projet est conçu pour être conforme aux normes suivantes (pour usage en 
+formation uniquement):
+- ISO 14971:2019 - Dispositifs médicaux - Application de la gestion des risques
+- IEC 62304:2006 - Logiciels de dispositifs médicaux
+- Règlement (UE) 2017/745 relatif aux dispositifs médicaux (MDR)
+- RGPD (Règlement Général sur la Protection des Données)
+
+This project is designed to comply with the following standards (for training 
+use only):
+- ISO 14971:2019 - Medical devices - Application of risk management
+- IEC 62304:2006 - Medical device software
+- Regulation (EU) 2017/745 on medical devices (MDR)
+- GDPR (General Data Protection Regulation)
+
+---
+
+CRÉDITS / CREDITS
+
+Protocole START (Simple Triage And Rapid Treatment):
+Développé par le Hoag Hospital et le Newport Beach Fire Department en 1983.
+
+START Protocol (Simple Triage And Rapid Treatment):
+Developed by Hoag Hospital and Newport Beach Fire Department in 1983.

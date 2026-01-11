@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: equipmentso-script-guid-placeholder, type: 3}
+  m_Name: Equipment_CouvertureSurvie
+  m_EditorClassIdentifier: 
+  equipmentId: EQ_COUV_SURVIE_001
+  equipmentName: Couverture de Survie Isotherme
+  description: "Couverture isotherme en polyester métallisé. Face dorée vers l'extérieur pour protéger du froid, face argentée vers l'extérieur pour protéger de la chaleur."
+  category: 3
+  weight: 0.06
+  isReusable: false
+  usageInstructions:
+    - "Déplier la couverture avec précaution"
+    - "Face dorée vers l'extérieur = protection contre le froid"
+    - "Face argentée vers l'extérieur = protection contre la chaleur"
+    - "Envelopper le patient en laissant le visage dégagé"
+    - "Éviter le contact direct avec le sol"
+  contraindications:
+    - "Aucune contre-indication absolue"
+  applicableInjuries:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  icon: {fileID: 0}
+  model3D: {fileID: 0}

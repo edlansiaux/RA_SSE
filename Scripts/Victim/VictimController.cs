@@ -410,6 +410,93 @@ namespace RASSE.Core
             }
         }
 
+        #region Zone Management
+        
+        private object currentZone;
+        
+        /// <summary>
+        /// Définit la zone de triage actuelle de la victime
+        /// </summary>
+        public void SetCurrentZone(object zone)
+        {
+            currentZone = zone;
+            Debug.Log($"[Victim] {PatientId} assigné à une zone de triage");
+        }
+        
+        /// <summary>
+        /// Efface la zone de triage actuelle
+        /// </summary>
+        public void ClearCurrentZone()
+        {
+            currentZone = null;
+            Debug.Log($"[Victim] {PatientId} retiré de la zone de triage");
+        }
+        
+        /// <summary>
+        /// Obtient la zone actuelle
+        /// </summary>
+        public object GetCurrentZone() => currentZone;
+        
+        #endregion
+
+        #region Damage System
+        
+        /// <summary>
+        /// Applique des dégâts à la victime (zones dangereuses, délai de traitement)
+        /// </summary>
+        public void TakeDamage(float damage, string source = "Unknown")
+        {
+            if (IsEvacuated) return;
+            
+            // Réduire la santé via les signes vitaux
+            if (vitalSigns != null)
+            {
+                // Diminuer la saturation en oxygène
+                vitalSigns.oxygenSaturation = Mathf.Max(0, vitalSigns.oxygenSaturation - damage * 0.5f);
+                
+                // Augmenter le rythme cardiaque (stress)
+                vitalSigns.heartRate = Mathf.Min(200, vitalSigns.heartRate + damage * 2f);
+                
+                // Diminuer la pression artérielle si hémorragie
+                if (primaryInjury == InjuryType.Hemorrhage || primaryInjury == InjuryType.InternalBleeding)
+                {
+                    vitalSigns.bloodPressureSystolic = Mathf.Max(40, vitalSigns.bloodPressureSystolic - damage);
+                }
+                
+                // Vérifier si la victime décède
+                if (vitalSigns.oxygenSaturation < 60 || vitalSigns.bloodPressureSystolic < 50)
+                {
+                    SetDeceased();
+                }
+            }
+            
+            OnConditionChanged?.Invoke(this);
+            Debug.Log($"[Victim] {PatientId} a subi {damage:F1} dégâts de {source}");
+        }
+        
+        /// <summary>
+        /// Marque la victime comme décédée
+        /// </summary>
+        private void SetDeceased()
+        {
+            if (TriageCategory != StartCategory.Black)
+            {
+                TriageCategory = StartCategory.Black;
+                vitalSigns.isConscious = false;
+                vitalSigns.isBreathing = false;
+                vitalSigns.heartRate = 0;
+                
+                if (bleedingEffect != null)
+                {
+                    bleedingEffect.Stop();
+                }
+                
+                Debug.LogWarning($"[Victim] {PatientId} est décédé");
+            }
+        }
+        
+        #endregion
+
         private void OnDrawGizmos()
         {
             // Dessiner un gizmo pour visualiser la victime dans l'éditeur
